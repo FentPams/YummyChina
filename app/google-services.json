@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "238439710272",
+    "firebase_url": "https://fir-app-3b2cf-default-rtdb.firebaseio.com",
+    "project_id": "fir-app-3b2cf",
+    "storage_bucket": "fir-app-3b2cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238439710272:android:6ae8e3ce929666dc54a9a5",
+        "android_client_info": {
+          "package_name": "com.example.firebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238439710272-pu59s8d2i5ssf558vmoqrgvirag87epk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-hjLI7JJ7xA2QihAmIGyhnGcd-yn-ISU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238439710272-pu59s8d2i5ssf558vmoqrgvirag87epk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238439710272:android:9c9b25554fd93e5c54a9a5",
+        "android_client_info": {
+          "package_name": "com.example.firebasesocialmediaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238439710272-pu59s8d2i5ssf558vmoqrgvirag87epk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-hjLI7JJ7xA2QihAmIGyhnGcd-yn-ISU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238439710272-pu59s8d2i5ssf558vmoqrgvirag87epk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238439710272:android:59f1a7a50ca6edf854a9a5",
+        "android_client_info": {
+          "package_name": "com.example.yummychina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238439710272-pu59s8d2i5ssf558vmoqrgvirag87epk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-hjLI7JJ7xA2QihAmIGyhnGcd-yn-ISU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238439710272-pu59s8d2i5ssf558vmoqrgvirag87epk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
