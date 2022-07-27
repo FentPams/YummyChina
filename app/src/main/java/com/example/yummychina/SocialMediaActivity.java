@@ -85,7 +85,6 @@ public class SocialMediaActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         finish();
     }
-
     private void selectImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, 1000);
