@@ -13,9 +13,11 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,11 +26,17 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class SocialMediaActivity extends AppCompatActivity {
@@ -41,6 +49,8 @@ public class SocialMediaActivity extends AppCompatActivity {
     private InputStream stream;
     private String imageIdentifier;
     private String uploadedImageLink;
+    private List<String> users;
+    private ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +64,10 @@ public class SocialMediaActivity extends AppCompatActivity {
         edtDescription = findViewById(R.id.edtDes);
         usersListView = findViewById(R.id.usersListView);
 
+        users = new ArrayList<>();
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, users);
+
+        usersListView.setAdapter(adapter);
         postImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,7 +79,6 @@ public class SocialMediaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 uploadTheSelectedImageToFirebaseStorage();
-                finish();
             }
         });
     }
@@ -156,6 +169,37 @@ public class SocialMediaActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(SocialMediaActivity.this, "Uploading Process Succeed.", Toast.LENGTH_LONG).show();
+
+                    edtDescription.setVisibility(View.VISIBLE);
+
+                    FirebaseDatabase.getInstance().getReference().child("users").addChildEventListener(new ChildEventListener() {
+                        @Override
+                        public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                            String name = dataSnapshot.child("name").getValue(String.class);
+                            users.add(name);
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                        }
+
+                        @Override
+                        public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                        }
+
+                        @Override
+                        public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
 
                     taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                         @Override
