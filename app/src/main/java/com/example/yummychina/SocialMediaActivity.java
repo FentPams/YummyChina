@@ -13,11 +13,11 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -36,10 +36,11 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-public class SocialMediaActivity extends AppCompatActivity {
+public class SocialMediaActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private FirebaseAuth mAuth;
     private ImageView postImageView;
     private Button btnCreatePost;
@@ -51,6 +52,7 @@ public class SocialMediaActivity extends AppCompatActivity {
     private String uploadedImageLink;
     private List<String> users;
     private ArrayAdapter adapter;
+    private List<String> uids;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +65,10 @@ public class SocialMediaActivity extends AppCompatActivity {
         btnCreatePost = findViewById(R.id.btnCreatePost);
         edtDescription = findViewById(R.id.edtDes);
         usersListView = findViewById(R.id.usersListView);
+        usersListView.setOnItemClickListener(this);
 
         users = new ArrayList<>();
+        uids = new ArrayList<>();
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, users);
 
         usersListView.setAdapter(adapter);
@@ -175,6 +179,7 @@ public class SocialMediaActivity extends AppCompatActivity {
                     FirebaseDatabase.getInstance().getReference().child("users").addChildEventListener(new ChildEventListener() {
                         @Override
                         public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                            uids.add(dataSnapshot.getKey());
                             String name = dataSnapshot.child("name").getValue(String.class);
                             users.add(name);
                             adapter.notifyDataSetChanged();
@@ -204,11 +209,23 @@ public class SocialMediaActivity extends AppCompatActivity {
                     taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                         @Override
                         public void onComplete(@NonNull Task<Uri> task) {
-                            uploadedImageLink = task.getResult().toString();
+                            if (task.isSuccessful()) {
+                                uploadedImageLink = task.getResult().toString();
+                            }
                         }
                     });
                 }
             });
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        HashMap<String, String> dataMap = new HashMap<>();
+        dataMap.put("from", mAuth.getCurrentUser().getUid());
+        dataMap.put("imageId", imageIdentifier);
+        dataMap.put("imageLink", uploadedImageLink);
+        dataMap.put("description", edtDescription.getText().toString());
+        FirebaseDatabase.getInstance().getReference().child("users").child(uids.get(i)).child("received_posts").push().setValue(dataMap);
     }
 }
