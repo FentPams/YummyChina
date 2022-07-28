@@ -226,6 +226,13 @@ public class SocialMediaActivity extends AppCompatActivity implements AdapterVie
         dataMap.put("imageId", imageIdentifier);
         dataMap.put("imageLink", uploadedImageLink);
         dataMap.put("description", edtDescription.getText().toString());
-        FirebaseDatabase.getInstance().getReference().child("users").child(uids.get(i)).child("received_posts").push().setValue(dataMap);
+        FirebaseDatabase.getInstance().getReference().child("users").child(uids.get(i)).child("received_posts").push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(SocialMediaActivity.this, "Post Sent", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
