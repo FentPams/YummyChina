@@ -225,7 +225,7 @@ public class SocialMediaActivity extends AppCompatActivity implements AdapterVie
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         HashMap<String, String> dataMap = new HashMap<>();
-        dataMap.put("from", mAuth.getCurrentUser().getUid());
+        dataMap.put("from", mAuth.getCurrentUser().getDisplayName());
         dataMap.put("imageId", imageIdentifier);
         dataMap.put("imageLink", uploadedImageLink);
         dataMap.put("description", edtDescription.getText().toString());
