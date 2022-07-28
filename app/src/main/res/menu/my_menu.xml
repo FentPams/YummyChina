@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item android:id="@+id/viewPostsItem"
+        android:title="View Posts"
+        app:showAsAction="always"
+        />
+
     <item android:id="@+id/logoutItem"
         android:title="Logout"
         app:showAsAction="always"

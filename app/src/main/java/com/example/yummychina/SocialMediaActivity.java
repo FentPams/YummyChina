@@ -100,6 +100,9 @@ public class SocialMediaActivity extends AppCompatActivity implements AdapterVie
             case R.id.logoutItem:
                 logout();
                 break;
+            case R.id.viewPostsItem:
+                startActivity(new Intent(this, ViewPostsActivity.class));
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
