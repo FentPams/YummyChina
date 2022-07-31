@@ -14,15 +14,17 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="200dp"
-        android:scaleType="centerInside"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/description"
+        android:gravity="center"
         android:text="Description"/>
 
 
