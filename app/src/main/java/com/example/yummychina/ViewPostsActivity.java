@@ -44,10 +44,10 @@ public class ViewPostsActivity extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference().child("users").child(mAtuh.getCurrentUser().getUid()).child("received_posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                fromWhims.add(dataSnapshot.child("from").getValue(String.class));
-                imageLinks.add(dataSnapshot.child("imageLink").getValue(String.class));
+                fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
+                imageLinks.add(0, dataSnapshot.child("imageLink").getValue(String.class));
                 //dataMap.put("imageLink", dataSnapshot.child("imageLink").getValue(String.class));
-                descriptions.add(dataSnapshot.child("description").getValue(String.class));
+                descriptions.add(0, dataSnapshot.child("description").getValue(String.class));
                 postAdapter.notifyDataSetChanged();
             }
 

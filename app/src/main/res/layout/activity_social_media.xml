@@ -11,6 +11,7 @@
         android:id="@+id/postImageView"
         android:layout_width="match_parent"
         android:layout_height="270dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ramen"
