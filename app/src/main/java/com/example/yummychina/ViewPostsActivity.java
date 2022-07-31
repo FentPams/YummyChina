@@ -20,9 +20,10 @@ import java.util.List;
 public class ViewPostsActivity extends AppCompatActivity {
 
     private ListView postsLitView;
-    private List<String> users;
-    private ArrayAdapter adapter;
     private FirebaseAuth mAtuh;
+    private List<String> fromWhims;
+    private List<String> imageLinks;
+    private List<String> descriptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +33,22 @@ public class ViewPostsActivity extends AppCompatActivity {
         mAtuh = FirebaseAuth.getInstance();
 
         postsLitView = findViewById(R.id.postsLitView);
-        users = new ArrayList<>();
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, users);
-        postsLitView.setAdapter(adapter);
+
+        fromWhims = new ArrayList<>();
+        imageLinks = new ArrayList<>();
+        descriptions = new ArrayList<>();
+        PostAdapter postAdapter = new PostAdapter(this, fromWhims, imageLinks, descriptions);
+        postsLitView.setAdapter(postAdapter);
+
 
         FirebaseDatabase.getInstance().getReference().child("users").child(mAtuh.getCurrentUser().getUid()).child("received_posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String from = dataSnapshot.child("from").getValue(String.class);
-                System.out.println("huici from:" + from);
-                users.add(from);
-                adapter.notifyDataSetChanged();
+                fromWhims.add(dataSnapshot.child("from").getValue(String.class));
+                imageLinks.add(dataSnapshot.child("imageLink").getValue(String.class));
+                //dataMap.put("imageLink", dataSnapshot.child("imageLink").getValue(String.class));
+                descriptions.add(dataSnapshot.child("description").getValue(String.class));
+                postAdapter.notifyDataSetChanged();
             }
 
             @Override
