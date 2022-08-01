@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_black">#2A3136</color>
     <color name="fog_red">#a81e32</color>
+    <color name="yellow">#edc871</color>
 </resources>
