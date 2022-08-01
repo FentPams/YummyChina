@@ -48,6 +48,13 @@ public class SignUpActivity extends AppCompatActivity {
                 signUp();
             }
         });
+
+        back_to_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 
@@ -57,8 +64,6 @@ public class SignUpActivity extends AppCompatActivity {
         String emailStr = email.getEditText().getText().toString();
         String phoneNoStr = phoneNo.getEditText().getText().toString();
         String passwordStr = password.getEditText().getText().toString();
-        System.out.println("huici email:" + emailStr);
-        System.out.println("huici password:" + passwordStr);
         mAuth.createUserWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
