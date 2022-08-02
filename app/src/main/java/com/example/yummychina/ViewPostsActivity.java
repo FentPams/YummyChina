@@ -5,13 +5,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
@@ -19,8 +22,9 @@ import java.util.List;
 
 public class ViewPostsActivity extends AppCompatActivity {
 
+    ImageView back_btn;
+
     private ListView postsLitView;
-    private FirebaseAuth mAtuh;
     private List<String> fromWhims;
     private List<String> imageLinks;
     private List<String> descriptions;
@@ -30,21 +34,26 @@ public class ViewPostsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_posts);
 
-        mAtuh = FirebaseAuth.getInstance();
-
         postsLitView = findViewById(R.id.postsLitView);
-
+        back_btn = findViewById(R.id.back_pressed);
+        
         fromWhims = new ArrayList<>();
         imageLinks = new ArrayList<>();
         descriptions = new ArrayList<>();
         PostAdapter postAdapter = new PostAdapter(this, fromWhims, imageLinks, descriptions);
         postsLitView.setAdapter(postAdapter);
 
+        Bundle extras = getIntent().getExtras();
+        String cuisineName = extras.get("cuisine_name").toString();
+        String dishName = extras.get("dish_name").toString();
 
-        FirebaseDatabase.getInstance().getReference().child("users").child(mAtuh.getCurrentUser().getUid()).child("received_posts").addChildEventListener(new ChildEventListener() {
+        DatabaseReference databaseReference =
+                FirebaseDatabase.getInstance().getReference().child("cuisines").child(cuisineName).child(dishName);
+
+        databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
+                fromWhims.add(0, dataSnapshot.child("fromWhom").getValue(String.class));
                 imageLinks.add(0, dataSnapshot.child("imageLink").getValue(String.class));
                 //dataMap.put("imageLink", dataSnapshot.child("imageLink").getValue(String.class));
                 descriptions.add(0, dataSnapshot.child("description").getValue(String.class));
@@ -69,6 +78,13 @@ public class ViewPostsActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewPostsActivity.super.onBackPressed();
             }
         });
     }

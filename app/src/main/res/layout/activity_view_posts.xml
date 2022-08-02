@@ -4,7 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ViewPostsActivity">
+
+    <ImageView
+        android:id="@+id/back_pressed"
+        android:layout_width="50dp"
+        android:layout_height="53dp"
+        android:padding="15dp"
+        android:scrollbarSize="2dp"
+        android:src="@drawable/back_arrow"
+        tools:layout_conversion_absoluteHeight="49dp"
+        tools:layout_conversion_absoluteWidth="53dp"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="18dp" />
 
     <ListView
         android:id="@+id/postsLitView"
