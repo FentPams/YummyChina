@@ -16,7 +16,7 @@
             <menu>
                 <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_login"
+                    android:id="@+id/nav_post"
                     android:title="My Posts"
                     android:icon="@drawable/post"/>
                 <item

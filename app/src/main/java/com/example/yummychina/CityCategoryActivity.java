@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class CityCategoryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -24,6 +25,7 @@ public class CityCategoryActivity extends AppCompatActivity implements Navigatio
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,7 @@ public class CityCategoryActivity extends AppCompatActivity implements Navigatio
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //navgation bar
-
+        navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
@@ -79,6 +81,16 @@ public class CityCategoryActivity extends AppCompatActivity implements Navigatio
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_logout:
+                logout();
+                break;
+        }
         return true;
+    }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        finish();
     }
 }
