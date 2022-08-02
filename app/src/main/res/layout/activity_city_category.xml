@@ -52,7 +52,7 @@
             android:text="Cuisine Category"
             android:textColor="@color/fog_red"
             android:textSize="30sp"
-            android:fontFamily="@font/mousememoirs"
+            android:fontFamily="@font/permar"
             android:padding="10dp"
             android:layout_marginBottom="20dp"/>
 

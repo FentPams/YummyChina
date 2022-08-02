@@ -35,10 +35,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/mousememoirs"
+                android:fontFamily="@font/permar"
                 android:text="BENBANG CUISINE"
                 android:textColor="@color/fog_red"
-                android:textSize="30sp"
+                android:textSize="26sp"
                 tools:layout_conversion_absoluteHeight="35dp"
                 tools:layout_conversion_absoluteWidth="147dp"
                 tools:layout_editor_absoluteX="15dp"
