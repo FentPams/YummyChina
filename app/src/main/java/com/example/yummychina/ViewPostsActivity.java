@@ -36,7 +36,7 @@ public class ViewPostsActivity extends AppCompatActivity {
 
         postsLitView = findViewById(R.id.postsLitView);
         back_btn = findViewById(R.id.back_pressed);
-        
+
         fromWhims = new ArrayList<>();
         imageLinks = new ArrayList<>();
         descriptions = new ArrayList<>();

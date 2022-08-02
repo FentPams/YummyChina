@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/chinese"
-                android:text="本帮菜"
+                android:text="@string/bbc"
                 android:textColor="@color/light_black"
                 android:textSize="30dp"
                 tools:layout_conversion_absoluteHeight="40dp"
