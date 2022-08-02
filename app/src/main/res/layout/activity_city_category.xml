@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CityCategoryActivity"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <ImageView
+                android:id="@+id/profile_pressed"
+                android:layout_width="53dp"
+                android:layout_height="49dp"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:src="@drawable/lines" />
+
+            <ImageView
+                android:layout_width="62dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:src="@drawable/search" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cuisine Category"
+            android:textColor="@color/fog_red"
+            android:textSize="30sp"
+            android:fontFamily="@font/mousememoirs"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/shanghai"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:id="@+id/benbang_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="3dp"
+                android:background="#00000000"
+                android:fontFamily="@font/caveatb"
+                android:text="@string/sh"
+                android:textColor="@color/light_black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/guangzhou1"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:id="@+id/yue_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="3dp"
+                android:background="#00000000"
+                android:fontFamily="@font/caveatb"
+                android:text="@string/gz"
+                android:textColor="@color/light_black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/chengdu1"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:id="@+id/szechuan_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="3dp"
+                android:background="#00000000"
+                android:fontFamily="@font/caveatb"
+                android:text="@string/cd"
+                android:textColor="@color/light_black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/hangzhou1"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:id="@+id/zhe_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="3dp"
+                android:background="#00000000"
+                android:fontFamily="@font/caveatb"
+                android:text="@string/hz"
+                android:textColor="@color/light_black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/changsha1"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:id="@+id/chuan_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="3dp"
+                android:background="#00000000"
+                android:fontFamily="@font/caveatb"
+                android:text="@string/cs"
+                android:textColor="@color/light_black" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/beijing1"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:id="@+id/jing_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="3dp"
+                android:background="#00000000"
+                android:fontFamily="@font/caveatb"
+                android:text="@string/bj"
+                android:textColor="@color/light_black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/hongkong1"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:id="@+id/gang_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="3dp"
+                android:background="#00000000"
+                android:fontFamily="@font/caveatb"
+                android:text="@string/hk"
+                android:textColor="@color/light_black" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView >

@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SignUp to start your food travel !"
+        android:text="SignUp to start your food journey !"
         android:textSize="18sp"
         android:layout_marginLeft="20dp"
         android:transitionName="logo_desc"/>
@@ -117,14 +117,14 @@
         android:text="GO"
         android:background="#a81e32"
         android:textColor="#fff"
-        android:transitionName="button_trans"/>
+        android:transitionName="button_trans" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/back_to_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Already have an account? LogIn."
         android:background="#00000000"
-        android:transitionName="login_signup_trans"/>
+        android:text="Already have an account?  LogIn"
+        android:transitionName="login_signup_trans" />
 
 </LinearLayout>

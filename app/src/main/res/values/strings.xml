@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Yummy China</string>
+    <string name="explore">Explore Food</string>
+    <string name="sh">Benbang Cuisine</string>
+    <string name="hz">Zhe Cuisine</string>
+    <string name="cd">Szechuan Cuisine</string>
+    <string name="cs">Xiang Cuisine</string>
+    <string name="bj">Jing Cuisine</string>
+    <string name="gz">Yue Cuisine</string>
+    <string name="hk">Gang Cuisine</string>
+    <string name="benbang">BENBANG CUISINE</string>
 </resources>

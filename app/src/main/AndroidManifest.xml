@@ -16,6 +16,15 @@
         android:theme="@style/Theme.YummyChina"
         tools:targetApi="31">
         <activity
+            android:name=".ShanghaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CityCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -26,8 +35,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CityCategoryActivity"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/back_pressed"
+            android:layout_width="50dp"
+            android:layout_height="53dp"
+            android:padding="15dp"
+            android:scrollbarSize="2dp"
+            android:src="@drawable/back_arrow"
+            tools:layout_conversion_absoluteHeight="49dp"
+            tools:layout_conversion_absoluteWidth="53dp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="18dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mousememoirs"
+            android:text="BENBANG CUISINE"
+            android:textColor="@color/fog_red"
+            android:textSize="30sp"
+            tools:layout_conversion_absoluteHeight="35dp"
+            tools:layout_conversion_absoluteWidth="147dp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="71dp" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chinese"
+            android:text="本帮菜"
+            android:textColor="@color/light_black"
+            android:textSize="30dp"
+            tools:layout_conversion_absoluteHeight="40dp"
+            tools:layout_conversion_absoluteWidth="81dp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="126dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="191dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/xp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Benbang Smoked Fish" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="147dp"
+                    android:layout_height="169dp"
+                    app:srcCompat="@drawable/xlb" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Xiaolong Bao" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/panfreidbun_pic"
+                    android:layout_width="207dp"
+                    android:layout_height="159dp"
+                    app:srcCompat="@drawable/panfriedbun" />
+
+                <TextView
+                    android:id="@+id/panfriedbun_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Pan Fried Bun" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/huntun_pic"
+                    android:layout_width="185dp"
+                    android:layout_height="169dp"
+                    app:srcCompat="@drawable/huntun" />
+
+                <TextView
+                    android:id="@+id/huntun_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Chinese Spinach Wonton" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/duck"
+                    android:layout_width="207dp"
+                    android:layout_height="159dp"
+                    app:srcCompat="@drawable/soysauceduck" />
+
+                <TextView
+                    android:id="@+id/duck_des"
+                    android:layout_width="131dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Duck With Brown Sauce" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/prokinstine"
+                    android:layout_width="175dp"
+                    android:layout_height="152dp"
+                    app:srcCompat="@drawable/porkinstine" />
+
+                <TextView
+                    android:id="@+id/porkinstine_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Pork Intestine With Veggie" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/xgmlt"
+                    android:layout_width="207dp"
+                    android:layout_height="159dp"
+                    app:srcCompat="@drawable/xgmlt" />
+
+                <TextView
+                    android:id="@+id/xgmlt_des"
+                    android:layout_width="131dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Firm Tofu With Veggie" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/bblj"
+                    android:layout_width="175dp"
+                    android:layout_height="152dp"
+                    app:srcCompat="@drawable/bblj" />
+
+                <TextView
+                    android:id="@+id/bblj_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Ba Bao La Jiang" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
