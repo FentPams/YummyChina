@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -29,31 +28,38 @@
             tools:layout_editor_absoluteY="18dp" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/mousememoirs"
-            android:text="BENBANG CUISINE"
-            android:textColor="@color/fog_red"
-            android:textSize="30sp"
-            tools:layout_conversion_absoluteHeight="35dp"
-            tools:layout_conversion_absoluteWidth="147dp"
-            tools:layout_editor_absoluteX="15dp"
-            tools:layout_editor_absoluteY="71dp" />
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mousememoirs"
+                android:text="BENBANG CUISINE"
+                android:textColor="@color/fog_red"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="35dp"
+                tools:layout_conversion_absoluteWidth="147dp"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="71dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"/>
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/chinese"
+                android:text="本帮菜"
+                android:textColor="@color/light_black"
+                android:textSize="30dp"
+                tools:layout_conversion_absoluteHeight="40dp"
+                tools:layout_conversion_absoluteWidth="81dp"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="126dp" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/chinese"
-            android:text="本帮菜"
-            android:textColor="@color/light_black"
-            android:textSize="30dp"
-            tools:layout_conversion_absoluteHeight="40dp"
-            tools:layout_conversion_absoluteWidth="81dp"
-            tools:layout_editor_absoluteX="15dp"
-            tools:layout_editor_absoluteY="126dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
