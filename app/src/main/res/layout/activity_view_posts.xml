@@ -1,29 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ViewPostsActivity">
 
-    <ImageView
-        android:id="@+id/back_pressed"
-        android:layout_width="50dp"
-        android:layout_height="53dp"
-        android:padding="15dp"
-        android:scrollbarSize="2dp"
-        android:src="@drawable/back_arrow"
-        tools:layout_conversion_absoluteHeight="49dp"
-        tools:layout_conversion_absoluteWidth="53dp"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="18dp" />
-
-    <ListView
-        android:id="@+id/postsLitView"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/back_pressed"
+                android:layout_width="50dp"
+                android:layout_height="53dp"
+                android:padding="15dp"
+                android:scrollbarSize="2dp"
+                android:src="@drawable/back_arrow"
+                tools:layout_conversion_absoluteHeight="49dp"
+                tools:layout_conversion_absoluteWidth="53dp"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="18dp" />
+            <ImageView
+                android:id="@+id/addpost_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:src="@drawable/plus"/>
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/permar"
+            android:text="Xiaolongbao"
+            android:textColor="@color/fog_red"
+            android:textSize="26sp"
+            tools:layout_conversion_absoluteHeight="35dp"
+            tools:layout_conversion_absoluteWidth="147dp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="71dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chinese"
+            android:text="@string/xlb"
+            android:textColor="@color/light_black"
+            android:textSize="30dp"
+            tools:layout_conversion_absoluteHeight="40dp"
+            tools:layout_conversion_absoluteWidth="81dp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="126dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/xlbicon"/>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/shxy_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/userxlb2" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Huici  " />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="147dp"
+                    android:layout_height="169dp"
+                    app:srcCompat="@drawable/xlb" />
+
+                <TextView
+                    android:id="@+id/xlb_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caveatb"
+                    android:text="Xiaolong Bao" />
+            </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+        <ListView
+            android:id="@+id/postsLitView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+</ScrollView>

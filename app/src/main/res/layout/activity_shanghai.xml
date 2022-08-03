@@ -70,8 +70,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/shxy_pic"
@@ -90,8 +93,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/imageView8"
@@ -117,8 +123,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/panfreidbun_pic"
@@ -137,8 +146,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/huntun_pic"
@@ -164,8 +176,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/duck"
@@ -184,13 +199,16 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/prokinstine"
-                    android:layout_width="175dp"
-                    android:layout_height="152dp"
+                    android:layout_width="170dp"
+                    android:layout_height="150dp"
                     app:srcCompat="@drawable/porkinstine" />
 
                 <TextView
@@ -211,8 +229,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/xgmlt"
@@ -231,8 +252,12 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="6dp"
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/bblj"
