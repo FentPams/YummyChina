@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void transitionToSocialMediaActivity() {
-        Intent intent = new Intent(this, SocialMediaActivity.class);
+        Intent intent = new Intent(this, CreatePostActivity.class);
         startActivity(intent);
     }
 }

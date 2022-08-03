@@ -43,7 +43,7 @@
             android:name=".ViewPostsActivity"
             android:exported="false" />
         <activity
-            android:name=".SocialMediaActivity"
+            android:name=".CreatePostActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

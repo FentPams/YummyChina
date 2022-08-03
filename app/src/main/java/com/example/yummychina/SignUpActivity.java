@@ -104,7 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void transitionToSocialMediaActivity() {
-        Intent intent = new Intent(this, SocialMediaActivity.class);
+        Intent intent = new Intent(this, CityCategoryActivity.class);
         startActivity(intent);
     }
 }

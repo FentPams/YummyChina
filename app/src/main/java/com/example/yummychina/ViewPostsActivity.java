@@ -4,13 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +21,7 @@ import java.util.List;
 
 public class ViewPostsActivity extends AppCompatActivity {
 
-    ImageView back_btn;
+    ImageView back_btn, create_post_btn;
 
     private ListView postsLitView;
     private List<String> fromWhims;
@@ -36,6 +35,7 @@ public class ViewPostsActivity extends AppCompatActivity {
 
         postsLitView = findViewById(R.id.postsLitView);
         back_btn = findViewById(R.id.back_pressed);
+        create_post_btn = findViewById(R.id.create_post);
 
         fromWhims = new ArrayList<>();
         imageLinks = new ArrayList<>();
@@ -53,7 +53,7 @@ public class ViewPostsActivity extends AppCompatActivity {
         databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                fromWhims.add(0, dataSnapshot.child("fromWhom").getValue(String.class));
+                fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
                 imageLinks.add(0, dataSnapshot.child("imageLink").getValue(String.class));
                 //dataMap.put("imageLink", dataSnapshot.child("imageLink").getValue(String.class));
                 descriptions.add(0, dataSnapshot.child("description").getValue(String.class));
@@ -85,6 +85,16 @@ public class ViewPostsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ViewPostsActivity.super.onBackPressed();
+            }
+        });
+
+        create_post_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewPostsActivity.this, CreatePostActivity.class);
+                intent.putExtra("cuisine_name", cuisineName);
+                intent.putExtra("dish_name", dishName);
+                startActivity(intent);
             }
         });
     }
