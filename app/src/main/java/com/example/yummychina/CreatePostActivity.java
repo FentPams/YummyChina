@@ -38,6 +38,7 @@ public class CreatePostActivity extends AppCompatActivity {
     private Bitmap bitmap;
     private String imageIdentifier;
     private Bundle extras;
+    ImageView back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class CreatePostActivity extends AppCompatActivity {
         postImageView = findViewById(R.id.postImageView);
         btnCreatePost = findViewById(R.id.btnCreatePost);
         edtDescription = findViewById(R.id.edtDes);
+        back_btn = findViewById(R.id.back_pressed);
 
         postImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +66,14 @@ public class CreatePostActivity extends AppCompatActivity {
                 uploadTheSelectedImageToFirebaseStorage();
             }
         });
-    }
 
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CreatePostActivity.super.onBackPressed();
+            }
+        });
+    }
 
     private void selectImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

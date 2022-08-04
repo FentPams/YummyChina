@@ -15,4 +15,13 @@
         <item name="android:windowContentTransitions">true</item>
 
     </style>
+
+    <style name="MyExpandedTitle" parent="@style/TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="fontFamily">@font/mochi</item>
+        <item name="android:fontFamily">@font/mochi</item>
+    </style>
+    <style name="MyCollapsedTitle" parent="@style/TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/mochi</item>
+        <item name="android:fontFamily">@font/mochi</item>
+    </style>
 </resources>

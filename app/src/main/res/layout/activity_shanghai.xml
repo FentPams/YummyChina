@@ -100,13 +100,13 @@
                 app:cardUseCompatPadding="true">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/xlb_pic"
                     android:layout_width="147dp"
                     android:layout_height="169dp"
                     app:srcCompat="@drawable/xlb" />
 
                 <TextView
-                    android:id="@+id/xlb_pic"
+                    android:id="@+id/xlb_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/caveatb"

@@ -5,32 +5,52 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fromWhom"
-        android:fontFamily="monospace"
-        android:textSize="14sp"
-        android:textColor="#3366ff"
-        android:text="FromWhom"/>
+        android:padding="20dp"
+        app:cardCornerRadius="18dp"
+        android:elevation="8dp"
+        app:cardPreventCornerOverlap="true">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:layout_gravity="center"
-        tools:srcCompat="@tools:sample/avatars" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/description"
-        android:gravity="center"
-        android:text="Description"
-        android:textSize="20sp"
-        android:fontFamily="casual"/>
+
+            <TextView
+                android:id="@+id/fromWhom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/permar"
+                android:text="FromWhom"
+                android:textColor="@color/light_black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caveatb"
+                android:gravity="center"
+                android:text="Description"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
 
 
 </LinearLayout>

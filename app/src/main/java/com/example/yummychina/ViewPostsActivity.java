@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ViewPostsActivity extends AppCompatActivity {
 
-    ImageView back_btn, create_post_btn;
+    ImageView back_btn, create_post_btn, recipe_btn;
 
     private ListView postsLitView;
     private List<String> fromWhims;
@@ -36,6 +36,7 @@ public class ViewPostsActivity extends AppCompatActivity {
         postsLitView = findViewById(R.id.postsLitView);
         back_btn = findViewById(R.id.back_pressed);
         create_post_btn = findViewById(R.id.create_post);
+        recipe_btn =findViewById(R.id.recipe_icon);
 
         fromWhims = new ArrayList<>();
         imageLinks = new ArrayList<>();
@@ -94,6 +95,14 @@ public class ViewPostsActivity extends AppCompatActivity {
                 Intent intent = new Intent(ViewPostsActivity.this, CreatePostActivity.class);
                 intent.putExtra("cuisine_name", cuisineName);
                 intent.putExtra("dish_name", dishName);
+                startActivity(intent);
+            }
+        });
+
+        recipe_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewPostsActivity.this, RecipeActivity.class);
                 startActivity(intent);
             }
         });

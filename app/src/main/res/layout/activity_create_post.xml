@@ -2,38 +2,66 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CreatePostActivity">
 
     <ImageView
-        android:id="@+id/postImageView"
+        android:id="@+id/back_pressed"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="15dp"
+        android:scrollbarSize="2dp"
+        android:src="@drawable/back_arrow" />
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ramen"
-        tools:layout_editor_absoluteY="-21dp" />
+        android:layout_height="275dp"
+        android:elevation="15dp"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="@color/gray_r"
+        android:layout_margin="20dp">
+
+
+        <ImageView
+            android:id="@+id/postImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/sharefoodc"
+            tools:layout_editor_absoluteY="-21dp" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnCreatePost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create My Post"
+        android:layout_margin="20dp"
+        android:text="upload my post"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postImageView" />
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="8dp"
+    app:cardCornerRadius="8dp">
+
 
     <EditText
         android:id="@+id/edtDes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:ems="10"
         android:hint="Please enter description here..."
         android:inputType="textPersonName"
         android:visibility="invisible" />
+</androidx.cardview.widget.CardView>
+
 
 </LinearLayout>

@@ -67,61 +67,70 @@
             tools:layout_conversion_absoluteWidth="81dp"
             tools:layout_editor_absoluteX="15dp"
             tools:layout_editor_absoluteY="126dp" />
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/xlbicon"/>
+
     </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:orientation="horizontal"
-            android:padding="10dp">
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="10dp">
+            android:layout_height="108dp"
+            android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/shxy_pic"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/userxlb2" />
-
-                <TextView
-                    android:id="@+id/username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/caveatb"
-                    android:text="Huici  " />
-            </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardCornerRadius="50dp"
+                android:elevation="40dp">
 
                 <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="147dp"
-                    android:layout_height="169dp"
-                    app:srcCompat="@drawable/xlb" />
+                    android:id="@+id/recipe_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/recipe" />
 
-                <TextView
-                    android:id="@+id/xlb_pic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/caveatb"
-                    android:text="Xiaolong Bao" />
+
             </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="50dp"
+                android:elevation="40dp">
+
+                <ImageView
+                    android:id="@+id/xlb_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/xlbicon" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="50dp"
+                android:elevation="40dp">
+
+                <ImageView
+                        android:id="@+id/restaurant_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/restaurant" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
         <ListView
             android:id="@+id/postsLitView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="516dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
