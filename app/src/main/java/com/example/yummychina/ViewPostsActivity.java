@@ -103,6 +103,8 @@ public class ViewPostsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ViewPostsActivity.this, RecipeActivity.class);
+                intent.putExtra("cuisine_name", cuisineName);
+                intent.putExtra("dish_name", dishName);
                 startActivity(intent);
             }
         });

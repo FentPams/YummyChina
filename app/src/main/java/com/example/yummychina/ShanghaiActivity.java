@@ -32,7 +32,7 @@ public class ShanghaiActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ShanghaiActivity.this, ViewPostsActivity.class);
                 intent.putExtra("cuisine_name", "benbang");
-                intent.putExtra("dish_name", "smoke_fish");
+                intent.putExtra("dish_name", "xiaolongbao");
                 startActivity(intent);
             }
         });
