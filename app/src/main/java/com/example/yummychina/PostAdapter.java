@@ -1,6 +1,8 @@
 package com.example.yummychina;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,8 +50,12 @@ public class PostAdapter extends ArrayAdapter<String> {
         singleItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str = String.format("you clicked %s", fromWhims.get(position));
-                Toast.makeText(getContext(), str, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, PostDetailActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("fromWhom", fromWhims.get(position));
+                intent.putExtra("imageLink", imageLinks.get(position));
+                intent.putExtra("description", descriptions.get(position));
+                context.startActivity(intent);
             }
         });
         return singleItem;
