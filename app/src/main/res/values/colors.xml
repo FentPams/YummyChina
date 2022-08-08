@@ -9,6 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_black">#2A3136</color>
+    <color name="ll_black">#3A4349</color>
     <color name="gray">#AE121619</color>
     <color name="fog_red">#a81e32</color>
     <color name="light_fog_red">#75A81E32</color>
@@ -16,6 +17,13 @@
     <color name="gold">#AEEDD504</color>
     <color name="light_gold">#C1F1BA4C</color>
     <color name="light_yellow">#F4AE08</color>
+    <color name="ye1">#C35B28</color>
     <color name="orange">#F89502</color>
     <color name="pink">#A9F1A5A5</color>
+    <color name="hupo">#CA6924</color>
+    <color name="yanzhi">#9d2933</color>
+    <color name="kuhuang">#d3b17d</color>
+    <color name="zheshi">#845a33</color>
+    <color name="dailv">#426666</color>
+    <color name="bai">#f2ecde</color>
 </resources>

@@ -59,10 +59,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
-        android:fontFamily="@font/mousememoirs"
+        android:fontFamily="@font/permar"
         android:text="Origin of Xiaolong Bao"
         android:textColor="@color/fog_red"
-        android:textSize="24sp"
+        android:textSize="23sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
@@ -76,11 +76,11 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/origin_des"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.0"
 
         app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.333" />
 
     <!--    <Button-->
 <!--        android:id="@+id/button"-->

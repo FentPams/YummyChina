@@ -147,13 +147,13 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="378dp"
-        android:layout_height="114dp"
+        android:layout_width="380dp"
+        android:layout_height="141dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="24dp"
         android:lineSpacingExtra="2dp"
         android:text="In the history of Shanghai, Jiajia Tangbao has a history of 30 years ago. It is one of the time-honored Xiaolongbao brands in the local area. Many locals are its loyal fans. , use the first half and then add the secret old fire soup, so that the xiaolongbao is made of lean meat juice, and the xiaolongbao is made of lean meat juice to ensure freshness."
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"

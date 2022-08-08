@@ -40,12 +40,13 @@ public class ViewRestaurantsActivity extends AppCompatActivity {
 
 
         List<AsiaFood> asiaFoodList = new ArrayList<>();
-        asiaFoodList.add(new AsiaFood("Jiajia Tangbao", "$20", R.drawable.jjtb, "4.5", "JiaJia"));
-        asiaFoodList.add(new AsiaFood("Fuchun Xiaolong", "$25", R.drawable.fcxl, "4.2", "Fuchun"));
-        asiaFoodList.add(new AsiaFood("Wan Shou Zhai", "$20", R.drawable.jjtb3, "4.5", "Wan Shou Zhai"));
-        asiaFoodList.add(new AsiaFood("LaiLai", "$25", R.drawable.llxl, "4.2", "LaiLai"));
-        asiaFoodList.add(new AsiaFood("Nan Xiang", "$20", R.drawable.nxmtd, "4.5", "Nan Xiang"));
-        asiaFoodList.add(new AsiaFood("Wu You Xian", "$25", R.drawable.wyx, "4.2", "Wu You Xian"));
+        asiaFoodList.add(new AsiaFood("Su Xiao Liu", "$$", R.drawable.sxl, "4.9", "SuXiaoLiu"));
+        asiaFoodList.add(new AsiaFood("Jiajia Soup Dumpling", "$", R.drawable.jjtb, "4.5", "JiaJia"));
+        asiaFoodList.add(new AsiaFood("Ding Tai Fung", "$$", R.drawable.dtf, "4.5", "DingTaiFeng"));
+        asiaFoodList.add(new AsiaFood("Wan Shou Zhai", "$", R.drawable.jjtb3, "4.3", "WanShouZhai"));
+        asiaFoodList.add(new AsiaFood("LaiLai", "$$", R.drawable.llxl, "4.2", "LaiLai"));
+        asiaFoodList.add(new AsiaFood("Nan Xiang Soup Dumpling", "$$", R.drawable.nxmtd, "4.1", "NanXiang"));
+
 
         setAsiaRecycler(asiaFoodList);
 

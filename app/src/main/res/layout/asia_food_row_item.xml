@@ -44,7 +44,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/hinds"
             android:text="$6.05"
-            android:textColor="@color/fog_red"
+            android:textColor="@color/gray"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView4"
             app:layout_constraintEnd_toEndOf="parent" />
