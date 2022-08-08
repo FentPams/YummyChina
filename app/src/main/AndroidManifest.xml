@@ -16,6 +16,15 @@
         android:theme="@style/Theme.YummyChina"
         tools:targetApi="31">
         <activity
+            android:name=".ViewRestaurantsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FoodStoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecipeActivity"
             android:exported="false" />
         <activity

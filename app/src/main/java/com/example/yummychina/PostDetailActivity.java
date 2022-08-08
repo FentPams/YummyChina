@@ -3,14 +3,22 @@ package com.example.yummychina;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PostDetailActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
     ImageView imgPost,imgCurrentUser;
     TextView txtPostDesc, txtPostDateName,txtPostTitle;
     EditText editTextComment;
@@ -20,6 +28,8 @@ public class PostDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
+
+        mAuth = FirebaseAuth.getInstance();
 
         //hooks
         imgPost = findViewById(R.id.post_detail_img);
@@ -36,9 +46,26 @@ public class PostDetailActivity extends AppCompatActivity {
         String imageLink = extras.get("imageLink").toString();
         String fromWhom = extras.get("fromWhom").toString();
         String description = extras.get("description").toString();
+        String postId = extras.get("postId").toString();
 
         Picasso.get().load(imageLink).into(imgPost);
         txtPostTitle.setText(description);
         txtPostDateName.setText(fromWhom);
+
+        post_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String comment = editTextComment.getText().toString();
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("comments").child(postId);
+
+                Map<String, String> dataMap = new HashMap<>();
+                dataMap.put("comment", comment);
+                dataMap.put("from", mAuth.getCurrentUser().getDisplayName());
+                dataMap.put("time", Long.toString(System.currentTimeMillis()));
+                databaseReference.push().setValue(dataMap);
+                finish();
+                startActivity(getIntent());
+            }
+        });
     }
 }

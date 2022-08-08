@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoodStoryActivity">
+
+    <ImageView
+        android:id="@+id/back_pressed"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_arrow" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_pressed"
+        app:srcCompat="@drawable/xlbcartoon" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/imageView5"
+    app:layout_constraintEnd_toStartOf="@+id/origin_des">
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/origin_des"
+        android:layout_width="match_parent"
+        android:layout_height="301dp"
+        android:layout_margin="25dp"
+        android:fontFamily="@font/hinds"
+        android:lineSpacingExtra="2dp"
+        android:scrollbars="vertical"
+        android:text="    Xiaolongbao (/ˈʃaʊlɒŋˌbaʊ/) refers to a type of small Chinese steamed bun (baozi) traditionally prepared in a xiaolong, a small bamboo steaming basket,[1] hence the name. Xiaolongbao are often referred to as a kind of dumpling, but should not be confused with Chinese jiaozi or wonton. In some parts of China and overseas, xiaolongbao may specifically refer to a kind of soup dumpling, the tangbao (Chinese 汤包) of Jiangsu cuisine, which are strongly associated with Shanghai and Wuxi. In Shanghainese, these are also known as siaulon moedeu or xiaolong-style mantous,[2] as Wu Chinese-speaking peoples use the traditional definition of mantou, which refers to both filled and unfilled buns. Shengjianbao are very similar to tangbao but are pan-fried instead of steamed."
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/mousememoirs"
+        android:text="Origin of Xiaolong Bao"
+        android:textColor="@color/fog_red"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/name_chinese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chinese"
+        android:text="起源"
+        android:textColor="#333333"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/origin_des"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:fontFamily="@font/mochi"-->
+<!--        android:text="Create my story"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

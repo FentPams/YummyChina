@@ -21,12 +21,13 @@ import java.util.List;
 
 public class ViewPostsActivity extends AppCompatActivity {
 
-    ImageView back_btn, create_post_btn, recipe_btn;
+    ImageView back_btn, create_post_btn, recipe_btn, story_btn, restaurant_btn;
 
     private ListView postsLitView;
     private List<String> fromWhims;
     private List<String> imageLinks;
     private List<String> descriptions;
+    private List<String> postIds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +38,14 @@ public class ViewPostsActivity extends AppCompatActivity {
         back_btn = findViewById(R.id.back_pressed);
         create_post_btn = findViewById(R.id.create_post);
         recipe_btn =findViewById(R.id.recipe_icon);
+        story_btn = findViewById(R.id.xlb_icon);
+        restaurant_btn = findViewById(R.id.restaurant_icon);
 
         fromWhims = new ArrayList<>();
         imageLinks = new ArrayList<>();
         descriptions = new ArrayList<>();
-        PostAdapter postAdapter = new PostAdapter(this, fromWhims, imageLinks, descriptions);
+        postIds = new ArrayList<>();
+        PostAdapter postAdapter = new PostAdapter(this, fromWhims, imageLinks, descriptions, postIds);
         postsLitView.setAdapter(postAdapter);
 
         Bundle extras = getIntent().getExtras();
@@ -54,6 +58,7 @@ public class ViewPostsActivity extends AppCompatActivity {
         databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                postIds.add(0, dataSnapshot.getKey());
                 fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
                 imageLinks.add(0, dataSnapshot.child("imageLink").getValue(String.class));
                 //dataMap.put("imageLink", dataSnapshot.child("imageLink").getValue(String.class));
@@ -99,6 +104,7 @@ public class ViewPostsActivity extends AppCompatActivity {
             }
         });
 
+
         recipe_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,5 +114,22 @@ public class ViewPostsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        story_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewPostsActivity.this, FoodStoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        restaurant_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewPostsActivity.this, ViewRestaurantsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

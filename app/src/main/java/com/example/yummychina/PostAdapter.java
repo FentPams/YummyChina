@@ -22,13 +22,15 @@ public class PostAdapter extends ArrayAdapter<String> {
     List<String> fromWhims;
     List<String> imageLinks;
     List<String> descriptions;
+    List<String> postIds;
 
-    public PostAdapter(@NonNull Context context, List<String> fromWhims, List<String> imageLinks, List<String> descriptions) {
+    public PostAdapter(@NonNull Context context, List<String> fromWhims, List<String> imageLinks, List<String> descriptions, List<String> postIds) {
         super(context, R.layout.single_post, R.id.fromWhom, fromWhims);
         this.context = context;
         this.fromWhims = fromWhims;
         this.imageLinks = imageLinks;
         this.descriptions = descriptions;
+        this.postIds = postIds;
     }
 
     @NonNull
@@ -55,6 +57,7 @@ public class PostAdapter extends ArrayAdapter<String> {
                 intent.putExtra("fromWhom", fromWhims.get(position));
                 intent.putExtra("imageLink", imageLinks.get(position));
                 intent.putExtra("description", descriptions.get(position));
+                intent.putExtra("postId", postIds.get(position));
                 context.startActivity(intent);
             }
         });
