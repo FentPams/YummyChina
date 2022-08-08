@@ -28,7 +28,7 @@
         android:fontFamily="@font/chinese"
         android:text=" 寻"
         android:textColor="@color/light_black"
-        android:textSize="30sp"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="@id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 

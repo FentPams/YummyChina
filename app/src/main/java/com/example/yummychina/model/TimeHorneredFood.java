@@ -1,35 +1,15 @@
 package com.example.yummychina.model;
 
-public class AsiaFood {
+public class TimeHorneredFood {
+
     String name;
     String price;
     Integer imageUrl;
 
-    public AsiaFood(String name, String price, Integer imageUrl, String rating, String restorantname) {
+    public TimeHorneredFood(String name, String price, Integer imageUrl) {
         this.name = name;
         this.price = price;
         this.imageUrl = imageUrl;
-        this.rating = rating;
-        this.restorantname = restorantname;
-    }
-
-    String rating;
-    String restorantname;
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
-
-    public String getRestorantname() {
-        return restorantname;
-    }
-
-    public void setRestorantname(String restorantname) {
-        this.restorantname = restorantname;
     }
 
     public String getName() {
@@ -56,4 +36,3 @@ public class AsiaFood {
         this.imageUrl = imageUrl;
     }
 }
-

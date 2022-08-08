@@ -109,8 +109,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/City"
-                            android:text="City"
+                            android:id="@+id/hard"
+                            android:text="Hard Level"
                             android:fontFamily="@font/mochi"
                             android:paddingLeft="14dp"
                             android:paddingRight="14dp"
@@ -118,18 +118,19 @@
                             android:textColor="@color/light_black"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
+
                         <TextView
-                            android:id="@+id/city"
-                            android:text="Shanghai"
+                            android:id="@+id/hardlevel"
+                            android:layout_width="match_parent"
+                            android:layout_height="41dp"
                             android:fontFamily="@font/hinds"
                             android:paddingLeft="14dp"
-                            android:paddingRight="14dp"
                             android:paddingTop="5dp"
-                            android:paddingBottom="14dp"
-                            android:textSize="16sp"
-                            android:textColor="@color/light_black"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:paddingRight="14dp"
+                            android:paddingBottom="0dp"
+                            android:text="* * * * *"
+                            android:textColor="@color/yellow"
+                            android:textSize="30sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>

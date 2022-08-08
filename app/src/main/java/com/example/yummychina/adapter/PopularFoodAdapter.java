@@ -1,8 +1,6 @@
 package com.example.yummychina.adapter;
 
-
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.yummychina.DetailsActivity;
 import com.example.yummychina.R;
 import com.example.yummychina.model.PopularFood;
 
 import java.util.List;
 
 
-public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.PopularFoodViewHolder> {
+public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.AsiaFoodViewHolder> {
 
     Context context;
     List<PopularFood> popularFoodList;
@@ -33,27 +30,20 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
 
     @NonNull
     @Override
-    public PopularFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AsiaFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.popular_food_row_item, parent, false);
-        return new PopularFoodViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.asia_food_row_item, parent, false);
+        return new AsiaFoodViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PopularFoodViewHolder holder, int position) {
+    public void onBindViewHolder( AsiaFoodViewHolder holder, int position) {
 
         holder.foodImage.setImageResource(popularFoodList.get(position).getImageUrl());
         holder.name.setText(popularFoodList.get(position).getName());
         holder.price.setText(popularFoodList.get(position).getPrice());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(context, DetailsActivity.class);
-                context.startActivity(i);
-            }
-        });
-
+        holder.rating.setText(popularFoodList.get(position).getRating());
+        holder.restorantName.setText(popularFoodList.get(position).getRestorantname());
 
     }
 
@@ -63,18 +53,20 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
     }
 
 
-    public static final class PopularFoodViewHolder extends RecyclerView.ViewHolder{
+    public static final class AsiaFoodViewHolder extends RecyclerView.ViewHolder{
 
 
         ImageView foodImage;
-        TextView price, name;
+        TextView price, name, rating, restorantName;
 
-        public PopularFoodViewHolder(@NonNull View itemView) {
+        public AsiaFoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
             foodImage = itemView.findViewById(R.id.food_image);
             price = itemView.findViewById(R.id.price);
             name = itemView.findViewById(R.id.name);
+            rating = itemView.findViewById(R.id.rating);
+            restorantName = itemView.findViewById(R.id.restorant_name);
 
 
 
