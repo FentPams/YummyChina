@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yummychina.DetailsActivity;
-import com.example.yummychina.model.PopularFood;
 import com.example.yummychina.R;
+import com.example.yummychina.model.PopularFood;
 
 import java.util.List;
 

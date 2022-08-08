@@ -1,8 +1,8 @@
 package com.example.yummychina;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class UserProfileActivity extends AppCompatActivity {
 

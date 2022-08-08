@@ -10,9 +10,21 @@ public class ProgramViewHolder {
     TextView fromWhom;
     TextView description;
 
-    ProgramViewHolder(View v) {
+    public ProgramViewHolder(View v) {
         image = v.findViewById(R.id.imageView);
         fromWhom = v.findViewById(R.id.fromWhom);
         description = v.findViewById(R.id.description);
+    }
+
+    public ImageView getImage() {
+        return image;
+    }
+
+    public TextView getFromWhom() {
+        return fromWhom;
+    }
+
+    public TextView getDescription() {
+        return description;
     }
 }

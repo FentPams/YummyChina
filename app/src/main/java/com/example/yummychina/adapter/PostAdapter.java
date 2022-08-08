@@ -1,17 +1,18 @@
-package com.example.yummychina;
+package com.example.yummychina.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.yummychina.PostDetailActivity;
+import com.example.yummychina.ProgramViewHolder;
+import com.example.yummychina.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -46,9 +47,9 @@ public class PostAdapter extends ArrayAdapter<String> {
         } else {
             holder = (ProgramViewHolder) singleItem.getTag();
         }
-        holder.fromWhom.setText(fromWhims.get(position));
-        Picasso.get().load(imageLinks.get(position)).into(holder.image);
-        holder.description.setText(descriptions.get(position));
+        holder.getFromWhom().setText(fromWhims.get(position));
+        Picasso.get().load(imageLinks.get(position)).into(holder.getImage());
+        holder.getDescription().setText(descriptions.get(position));
         singleItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,4 +1,4 @@
-package com.example.yummychina;
+package com.example.yummychina.model;
 
 public class User {
     private String name;

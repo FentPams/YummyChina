@@ -11,7 +11,6 @@ import com.example.yummychina.adapter.PopularFoodAdapter;
 import com.example.yummychina.model.AsiaFood;
 import com.example.yummychina.model.PopularFood;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
