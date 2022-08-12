@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.yummychina.PostDetailActivity;
-import com.example.yummychina.ProgramViewHolder;
+import com.example.yummychina.model.PostViewHolder;
 import com.example.yummychina.R;
 import com.squareup.picasso.Picasso;
 
@@ -38,14 +38,14 @@ public class PostAdapter extends ArrayAdapter<String> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View singleItem = convertView;
-        ProgramViewHolder holder;
+        PostViewHolder holder;
         if (singleItem == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             singleItem = layoutInflater.inflate(R.layout.single_post, parent, false);
-            holder = new ProgramViewHolder(singleItem);
+            holder = new PostViewHolder(singleItem);
             singleItem.setTag(holder);
         } else {
-            holder = (ProgramViewHolder) singleItem.getTag();
+            holder = (PostViewHolder) singleItem.getTag();
         }
         holder.getFromWhom().setText(fromWhims.get(position));
         Picasso.get().load(imageLinks.get(position)).into(holder.getImage());

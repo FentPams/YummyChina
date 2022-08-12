@@ -1,7 +1,6 @@
 package com.example.yummychina.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +9,8 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.yummychina.PostDetailActivity;
-import com.example.yummychina.ProgramViewHolder;
 import com.example.yummychina.R;
 import com.example.yummychina.model.CommentHolder;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 

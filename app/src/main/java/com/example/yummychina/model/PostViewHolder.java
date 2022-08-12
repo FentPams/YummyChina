@@ -1,16 +1,18 @@
-package com.example.yummychina;
+package com.example.yummychina.model;
 
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ProgramViewHolder {
+import com.example.yummychina.R;
+
+public class PostViewHolder {
 
     ImageView image;
     TextView fromWhom;
     TextView description;
 
-    public ProgramViewHolder(View v) {
+    public PostViewHolder(View v) {
         image = v.findViewById(R.id.imageView);
         fromWhom = v.findViewById(R.id.fromWhom);
         description = v.findViewById(R.id.description);
