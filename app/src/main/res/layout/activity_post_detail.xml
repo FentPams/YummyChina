@@ -69,7 +69,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/post_detail_title"
-            app:layout_constraintVertical_bias="0.186" />
+            app:layout_constraintVertical_bias="0.021" />
 
         <TextView
             android:id="@+id/post_detail_desc"
@@ -128,6 +128,16 @@
             app:layout_constraintStart_toEndOf="@+id/post_detail_user_pic"
             app:layout_constraintTop_toTopOf="@+id/post_detail_add_comment"
             app:layout_constraintVertical_bias="1.0" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/comments"
+            app:layout_constraintBottom_toTopOf="@+id/post_detail_add_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_desc"
+            android:layout_marginBottom="20dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>
