@@ -4,7 +4,10 @@
 ![built-by-xinyi-feng](https://user-images.githubusercontent.com/105081458/184509348-5da03af8-6de7-4926-8596-c53675fc9ac8.svg)
 ![built-for-android](https://user-images.githubusercontent.com/105081458/184509429-7c2158e5-000a-4446-a830-8d9bf914a639.svg)
 
-[![My Skills](https://skillicons.dev/icons?i=java,firebase,androidstudio&theme=light)](https://skillicons.dev)
+![My Skills](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+![My Skills](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
+![My Skills](https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?logo=adobeillustrator&logoColor=fff&style=for-the-badge)
+
 
 ## Overview:
 
