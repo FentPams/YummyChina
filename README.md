@@ -1,18 +1,22 @@
-# YummyChina
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=DynaPuff&pause=1010&color=C41929&lines=Welcome+to+explore++Chinese+food+:\))](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Permanent+Marker&pause=1013&color=C42908&width=550&height=30&lines=Welcome+to+explore+Chinese+Food+%3A\))](https://git.io/typing-svg)
 
-[![My Skills](https://skillicons.dev/icons?i=java,firebase,androidstudio,&theme=light)](https://skillicons.dev)
+
+![built-by-xinyi-feng](https://user-images.githubusercontent.com/105081458/184509348-5da03af8-6de7-4926-8596-c53675fc9ac8.svg)
+
+![built-for-android](https://user-images.githubusercontent.com/105081458/184509429-7c2158e5-000a-4446-a830-8d9bf914a639.svg)
+
+[![My Skills](https://skillicons.dev/icons?i=java,firebase,androidstudio,flutter&theme=light)](https://skillicons.dev)
 
 ## Overview:
 
 ### A platform for sharing Chinese food, learning about authentic food culture
 - **Firebase** stores users' data(username, password, posts, comments...)
-- Support users to view posts, and create posts in real time
-  - Allow creating comments and viewing others' comments
+- Support users to view **posts**, and create posts in real time
+  - Allow creating **comments** and viewing others' comments
 - Display city category with its' representative **cusine**
   - Sub-entry for representative **dishes** under each cuisine
   - Three sub-entries under each dish
-    - See **Recipe**
+    - See **recipe**
     - See food story of **origin**
     - See representative **resturants** (time-horoned, popular)
 
