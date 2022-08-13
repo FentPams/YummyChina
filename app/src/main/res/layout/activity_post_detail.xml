@@ -25,7 +25,7 @@
 
         <TextView
             android:id="@+id/post_detail_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
@@ -42,6 +42,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/post_detail_img"
             app:layout_constraintVertical_bias="0.0" />
+
 
         <View
             android:id="@+id/view"
@@ -85,7 +86,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/post_detail_datename" />
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_datename"
+            android:background="#F3F3F3"/>
 
         <ImageView
             android:id="@+id/post_detail_user_pic"
@@ -131,13 +133,14 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:id="@+id/comments"
+            android:layout_marginTop="20dp"
             app:layout_constraintBottom_toTopOf="@+id/post_detail_add_comment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/post_detail_desc"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

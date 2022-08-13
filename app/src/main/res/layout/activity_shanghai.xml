@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CityCategoryActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:backgroundTint="#F3F3F3">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -91,6 +92,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:foreground="?attr/selectableItemBackground"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

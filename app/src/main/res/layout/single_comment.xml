@@ -29,7 +29,7 @@
 
                 android:fontFamily="@font/permar"
                 android:text="FromWhom"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:textColor="@color/light_black"
                 android:textSize="10sp" />
 
@@ -41,6 +41,8 @@
                 android:fontFamily="@font/hinds"
                 android:text="date"
                 android:layout_marginLeft="10dp"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/light_black"
                 android:textSize="10sp" />
                 </LinearLayout>
@@ -59,16 +61,9 @@
                     android:gravity="left"
                     android:text="Description"
                     android:textSize="12sp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="5dp"/>
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_heart"
-                    android:layout_gravity="end">
-
-                </ImageView>
             </LinearLayout>
         </LinearLayout>
 

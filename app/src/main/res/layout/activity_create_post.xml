@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CreatePostActivity">
+    tools:context=".CreatePostActivity"
+    android:background="#F3F3F3">
 
     <ImageView
         android:id="@+id/back_pressed"
@@ -16,6 +17,8 @@
         android:src="@drawable/back_arrow" />
 
     <androidx.cardview.widget.CardView
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="275dp"
         android:elevation="15dp"
@@ -28,10 +31,11 @@
             android:id="@+id/postImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/sharefoodc"
+            app:srcCompat="@drawable/foodmoment"
+
             tools:layout_editor_absoluteY="-21dp" />
 
     </androidx.cardview.widget.CardView>

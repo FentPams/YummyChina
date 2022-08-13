@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewPostsActivity">
+    tools:context=".ViewPostsActivity"
+    android:background="#F3F3F3">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -76,6 +77,8 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -87,12 +90,15 @@
                     android:id="@+id/recipe_icon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/recipe" />
+                    app:srcCompat="@drawable/recipe"
+                    android:layout_margin="3dp"/>
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -104,12 +110,14 @@
                     android:id="@+id/xlb_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    app:srcCompat="@drawable/xlbicon" />
+                    android:layout_margin="0dp"
+                    app:srcCompat="@drawable/xlbred" />
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -121,7 +129,8 @@
                         android:id="@+id/restaurant_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/restaurant" />
+                        app:srcCompat="@drawable/restaurant"
+                        android:layout_margin="3dp"/>
 
             </androidx.cardview.widget.CardView>
 
