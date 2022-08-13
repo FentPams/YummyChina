@@ -1,5 +1,7 @@
 # YummyChina
 
+[![My Skills](https://skillicons.dev/icons?i=java,firebase,androidstudio,&theme=light)](https://skillicons.dev)
+
 ## Overview:
 
 ### A platform for sharing Chinese food, learning about authentic food culture
