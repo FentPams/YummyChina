@@ -13,22 +13,36 @@
     - See food story
     - See representative resturants of that dish
 
+<p>
+&nbsp&nbsp&nbsp&nbsp
 <img src="./readme_gifs/mainpage.gif" width="300" height="650"/>
+</p>
 
 ## Features:
 ### Sign in/Sign up
 - Splash screen with animation.
 - Using firebase for authentication. Self-designed mordern UI.
+<p>
+&nbsp&nbsp&nbsp&nbsp
 <img src="./readme_gifs/signin.gif" width="300" height="650"/>
+</p>
 
 ### Display cusine catergories, with entry for more..
 - Under each cusine category, representative dishes are displayed
 - Under each dish entry: 
   - View posts from users relates to that dish
   - Three buttons(sub-entries), first to show reciepe, second to show food story, thrid for searching restaurants
+
+<p>
+&nbsp&nbsp&nbsp&nbsp
 <img src="./readme_gifs/details.gif" width="300" height="650"/>
+</p>
 
 ### Post food image
 - Display on the post view in time.
 - Supports viewing post detail, adding comments.
+
+<p>
+&nbsp&nbsp&nbsp&nbsp
 <img src="./readme_gifs/create_post.gif" width="300" height="650"/>
+</p>
