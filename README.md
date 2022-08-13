@@ -1,19 +1,20 @@
 # YummyChina
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=DynaPuff&pause=1010&color=C41929&lines=Welcome+to+explore++Chinese+food+:\))](https://git.io/typing-svg)
 
 [![My Skills](https://skillicons.dev/icons?i=java,firebase,androidstudio,&theme=light)](https://skillicons.dev)
 
 ## Overview:
 
 ### A platform for sharing Chinese food, learning about authentic food culture
-- Firebase stores users' data(username, password, posts, comments...)
+- **Firebase** stores users' data(username, password, posts, comments...)
 - Support users to view posts, and create posts in real time
   - Allow creating comments and viewing others' comments
-- Display city category with its' representative cusine
-  - Sub-entry for representative dishes under each cuisine
+- Display city category with its' representative **cusine**
+  - Sub-entry for representative **dishes** under each cuisine
   - Three sub-entries under each dish
-    - See Recipe
-    - See food story
-    - See representative resturants of that dish
+    - See **Recipe**
+    - See food story of **origin**
+    - See representative **resturants** (time-horoned, popular)
 
 <p>
 &nbsp&nbsp&nbsp&nbsp
