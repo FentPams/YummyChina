@@ -2,10 +2,9 @@
 
 
 ![built-by-xinyi-feng](https://user-images.githubusercontent.com/105081458/184509348-5da03af8-6de7-4926-8596-c53675fc9ac8.svg)
-
 ![built-for-android](https://user-images.githubusercontent.com/105081458/184509429-7c2158e5-000a-4446-a830-8d9bf914a639.svg)
 
-[![My Skills](https://skillicons.dev/icons?i=java,firebase,androidstudio,flutter&theme=light)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=java,firebase,androidstudio&theme=light)](https://skillicons.dev)
 
 ## Overview:
 
