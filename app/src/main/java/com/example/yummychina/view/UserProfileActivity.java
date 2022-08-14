@@ -1,8 +1,10 @@
-package com.example.yummychina;
+package com.example.yummychina.view;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.yummychina.R;
 
 public class UserProfileActivity extends AppCompatActivity {
 

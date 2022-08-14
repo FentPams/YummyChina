@@ -16,31 +16,31 @@
         android:theme="@style/Theme.YummyChina"
         tools:targetApi="31">
         <activity
-            android:name=".ViewRestaurantsActivity"
+            android:name=".view.ViewRestaurantsActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailsActivity"
+            android:name=".view.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".FoodStoryActivity"
+            android:name=".view.FoodStoryActivity"
             android:exported="false" />
         <activity
-            android:name=".RecipeActivity"
+            android:name=".view.RecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".PostDetailActivity"
+            android:name=".view.PostDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ShanghaiActivity"
+            android:name=".view.ShanghaiActivity"
             android:exported="false" />
         <activity
-            android:name=".CityCategoryActivity"
+            android:name=".view.CityCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".UserProfileActivity"
+            android:name=".view.UserProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".view.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,19 +49,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".view.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewPostsActivity"
+            android:name=".view.ViewPostsActivity"
             android:exported="false" />
         <activity
-            android:name=".CreatePostActivity"
+            android:name=".view.CreatePostActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="false" />
     </application>
 

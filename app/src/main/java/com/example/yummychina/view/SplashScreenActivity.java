@@ -1,4 +1,4 @@
-package com.example.yummychina;
+package com.example.yummychina.view;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.yummychina.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN = 4000;

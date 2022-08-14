@@ -1,4 +1,4 @@
-package com.example.yummychina;
+package com.example.yummychina.view;
 
 import android.os.Bundle;
 
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.yummychina.R;
 import com.example.yummychina.adapter.PopularFoodAdapter;
 import com.example.yummychina.adapter.TimeHorneredFoodAdapter;
 import com.example.yummychina.model.PopularFood;

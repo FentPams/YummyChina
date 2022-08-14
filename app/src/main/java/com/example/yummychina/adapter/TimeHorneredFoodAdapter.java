@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.yummychina.DetailsActivity;
+import com.example.yummychina.view.DetailsActivity;
 import com.example.yummychina.R;
 import com.example.yummychina.model.TimeHorneredFood;
 

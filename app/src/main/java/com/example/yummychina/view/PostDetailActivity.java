@@ -1,4 +1,4 @@
-package com.example.yummychina;
+package com.example.yummychina.view;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.yummychina.R;
 import com.example.yummychina.adapter.CommentAdapter;
 import com.example.yummychina.adapter.PostAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -71,10 +72,12 @@ public class PostDetailActivity extends AppCompatActivity {
         String fromWhom = extras.get("fromWhom").toString();
         String description = extras.get("description").toString();
         String postId = extras.get("postId").toString();
+        String story = extras.get("story").toString();
 
         Picasso.get().load(imageLink).into(imgPost);
         txtPostTitle.setText(description);
         txtPostDateName.setText(fromWhom);
+        txtPostDesc.setText(story);
 
         post_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +97,6 @@ public class PostDetailActivity extends AppCompatActivity {
 
         DatabaseReference databaseReference =
                 FirebaseDatabase.getInstance().getReference().child("comments").child(postId);
-        System.out.println("huici post id:" +postId);
 
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override

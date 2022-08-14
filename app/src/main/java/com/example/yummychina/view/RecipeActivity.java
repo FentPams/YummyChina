@@ -1,4 +1,4 @@
-package com.example.yummychina;
+package com.example.yummychina.view;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.yummychina.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

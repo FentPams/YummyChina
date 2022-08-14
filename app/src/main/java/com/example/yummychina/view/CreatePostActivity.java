@@ -1,4 +1,4 @@
-package com.example.yummychina;
+package com.example.yummychina.view;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.yummychina.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -38,6 +39,7 @@ public class CreatePostActivity extends AppCompatActivity {
     private Bitmap bitmap;
     private String imageIdentifier;
     private Bundle extras;
+    private EditText edtStory;
     ImageView back_btn;
 
     @Override
@@ -52,6 +54,7 @@ public class CreatePostActivity extends AppCompatActivity {
         btnCreatePost = findViewById(R.id.btnCreatePost);
         edtDescription = findViewById(R.id.edtDes);
         back_btn = findViewById(R.id.back_pressed);
+        edtStory = findViewById(R.id.edtStory);
 
         postImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +103,7 @@ public class CreatePostActivity extends AppCompatActivity {
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), chosenImageData);
                 postImageView.setImageBitmap(bitmap);
                 edtDescription.setVisibility(View.VISIBLE);
+                edtStory.setVisibility(View.VISIBLE);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -155,6 +159,7 @@ public class CreatePostActivity extends AppCompatActivity {
         dataMap.put("imageLink", uploadedImageLink);
         dataMap.put("imageId", imageIdentifier);
         dataMap.put("description", edtDescription.getText().toString());
+        dataMap.put("story",edtStory.getText().toString());
 
         databaseReference.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

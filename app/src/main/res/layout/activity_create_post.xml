@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CreatePostActivity"
+    tools:context=".view.CreatePostActivity"
     android:background="#F3F3F3">
 
     <ImageView
@@ -45,9 +45,18 @@
     <EditText
         android:id="@+id/edtDes"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:ems="10"
         android:hint="Please enter description here..."
+        android:inputType="textPersonName"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/edtStory"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:ems="10"
+        android:hint="Optional: enter story of your pic"
         android:inputType="textPersonName"
         android:visibility="invisible" />
 

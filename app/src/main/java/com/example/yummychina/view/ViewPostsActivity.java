@@ -1,4 +1,4 @@
-package com.example.yummychina;
+package com.example.yummychina.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.yummychina.R;
 import com.example.yummychina.adapter.PostAdapter;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +30,7 @@ public class ViewPostsActivity extends AppCompatActivity {
     private List<String> imageLinks;
     private List<String> descriptions;
     private List<String> postIds;
+    private List<String> stories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,9 @@ public class ViewPostsActivity extends AppCompatActivity {
         imageLinks = new ArrayList<>();
         descriptions = new ArrayList<>();
         postIds = new ArrayList<>();
-        PostAdapter postAdapter = new PostAdapter(this, fromWhims, imageLinks, descriptions, postIds);
+        stories = new ArrayList<>();
+        PostAdapter postAdapter =
+                new PostAdapter(this, fromWhims, imageLinks, descriptions, postIds, stories);
         postsLitView.setAdapter(postAdapter);
 
         Bundle extras = getIntent().getExtras();
@@ -62,14 +66,13 @@ public class ViewPostsActivity extends AppCompatActivity {
                 postIds.add(0, dataSnapshot.getKey());
                 fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
                 imageLinks.add(0, dataSnapshot.child("imageLink").getValue(String.class));
-                //dataMap.put("imageLink", dataSnapshot.child("imageLink").getValue(String.class));
+                stories.add(0, dataSnapshot.child("story").getValue(String.class));
                 descriptions.add(0, dataSnapshot.child("description").getValue(String.class));
                 postAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override

@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.yummychina.PostDetailActivity;
+import com.example.yummychina.view.PostDetailActivity;
 import com.example.yummychina.model.PostViewHolder;
 import com.example.yummychina.R;
 import com.squareup.picasso.Picasso;
@@ -24,14 +24,16 @@ public class PostAdapter extends ArrayAdapter<String> {
     List<String> imageLinks;
     List<String> descriptions;
     List<String> postIds;
+    List<String> stories;
 
-    public PostAdapter(@NonNull Context context, List<String> fromWhims, List<String> imageLinks, List<String> descriptions, List<String> postIds) {
+    public PostAdapter(@NonNull Context context, List<String> fromWhims, List<String> imageLinks, List<String> descriptions, List<String> postIds, List<String> stroies) {
         super(context, R.layout.single_post, R.id.fromWhom, fromWhims);
         this.context = context;
         this.fromWhims = fromWhims;
         this.imageLinks = imageLinks;
         this.descriptions = descriptions;
         this.postIds = postIds;
+        this.stories = stroies;
     }
 
     @NonNull
@@ -59,6 +61,7 @@ public class PostAdapter extends ArrayAdapter<String> {
                 intent.putExtra("imageLink", imageLinks.get(position));
                 intent.putExtra("description", descriptions.get(position));
                 intent.putExtra("postId", postIds.get(position));
+                intent.putExtra("story", stories.get(position));
                 context.startActivity(intent);
             }
         });
