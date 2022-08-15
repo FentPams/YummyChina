@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.CreatePostActivity"
+    tools:context=".activity.CreatePostActivity"
     android:background="#F3F3F3">
 
     <ImageView

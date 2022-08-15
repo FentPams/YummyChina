@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.yummychina.model.Post;
-import com.example.yummychina.view.PostDetailActivity;
+import com.example.yummychina.activity.PostDetailActivity;
 import com.example.yummychina.adapter.holder.PostViewHolder;
 import com.example.yummychina.R;
 import com.squareup.picasso.Picasso;

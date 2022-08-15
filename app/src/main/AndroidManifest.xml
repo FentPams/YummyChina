@@ -16,28 +16,28 @@
         android:theme="@style/Theme.YummyChina"
         tools:targetApi="31">
         <activity
-            android:name=".view.ViewRestaurantsActivity"
+            android:name=".activity.ViewRestaurantsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.DetailsActivity"
+            android:name=".activity.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.FoodStoryActivity"
+            android:name=".activity.FoodStoryActivity"
             android:exported="false" />
         <activity
-            android:name=".view.RecipeActivity"
+            android:name=".activity.RecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.PostDetailActivity"
+            android:name=".activity.PostDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ShanghaiActivity"
+            android:name=".activity.ShanghaiActivity"
             android:exported="false" />
         <activity
-            android:name=".view.CityCategoryActivity"
+            android:name=".activity.CityCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SplashScreenActivity"
+            android:name=".activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,16 +46,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SignUpActivity"
+            android:name=".activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ViewPostsActivity"
+            android:name=".activity.ViewPostsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.CreatePostActivity"
+            android:name=".activity.CreatePostActivity"
             android:exported="false" />
     </application>
 

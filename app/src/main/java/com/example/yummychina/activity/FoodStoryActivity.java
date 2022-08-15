@@ -1,4 +1,4 @@
-package com.example.yummychina.view;
+package com.example.yummychina.activity;
 
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;

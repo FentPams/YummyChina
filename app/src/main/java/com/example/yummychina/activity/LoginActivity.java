@@ -1,4 +1,4 @@
-package com.example.yummychina.view;
+package com.example.yummychina.activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.example.yummychina.view;
+package com.example.yummychina.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yummychina.R;
 import com.example.yummychina.adapter.CommentAdapter;
-import com.example.yummychina.adapter.PostAdapter;
 import com.example.yummychina.model.Comment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -24,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;

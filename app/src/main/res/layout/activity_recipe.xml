@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/white"
-    tools:context=".view.RecipeActivity">
+    tools:context=".activity.RecipeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
