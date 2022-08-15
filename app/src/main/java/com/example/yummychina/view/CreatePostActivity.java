@@ -123,7 +123,7 @@ public class CreatePostActivity extends AppCompatActivity {
             UploadTask uploadTask = FirebaseStorage.getInstance().getReference().child("my_images").child(imageIdentifier).putBytes(data);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
-                public void onFailure(@NonNull Exception exception){
+                public void onFailure(@NonNull Exception exception) {
                     //handle unsuccessful uploads
                     Toast.makeText(CreatePostActivity.this, exception.toString(), Toast.LENGTH_LONG).show();
                 }
@@ -159,7 +159,7 @@ public class CreatePostActivity extends AppCompatActivity {
         dataMap.put("imageLink", uploadedImageLink);
         dataMap.put("imageId", imageIdentifier);
         dataMap.put("description", edtDescription.getText().toString());
-        dataMap.put("story",edtStory.getText().toString());
+        dataMap.put("story", edtStory.getText().toString());
 
         databaseReference.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

@@ -15,19 +15,20 @@ import com.example.yummychina.model.TimeHorneredFood;
 import java.util.ArrayList;
 import java.util.List;
 
+// This class is to set the recycler view with two adapters into acitivity_view_restaurants.xml
 public class ViewRestaurantsActivity extends AppCompatActivity {
-
-    RecyclerView popularRecycler, asiaRecycler;
+    // declare the view, adapters
+    RecyclerView timeHorneredRecycler, popularRecycler;
     TimeHorneredFoodAdapter timeHorneredFoodAdapter;
     PopularFoodAdapter popularFoodAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //connects with xml file
         setContentView(R.layout.activity_view_restaurants);
 
-        // now here we will add some dummy data to out model class
-
+        //some dummy data to model
         List<TimeHorneredFood> timeHorneredFoodList = new ArrayList<>();
 
         timeHorneredFoodList.add(new TimeHorneredFood("Jiajia Tangbao", "$3", R.drawable.jjtb));
@@ -37,7 +38,8 @@ public class ViewRestaurantsActivity extends AppCompatActivity {
         timeHorneredFoodList.add(new TimeHorneredFood("Nan Xiang", "$8", R.drawable.nxmtd));
         timeHorneredFoodList.add(new TimeHorneredFood("Wu You Xian", "$10", R.drawable.wyx));
 
-        setPopularRecycler(timeHorneredFoodList);
+        // put list into recycler view
+        setTimeHorneredRecycler(timeHorneredFoodList);
 
 
         List<PopularFood> popularFoodList = new ArrayList<>();
@@ -49,28 +51,28 @@ public class ViewRestaurantsActivity extends AppCompatActivity {
         popularFoodList.add(new PopularFood("Nan Xiang Soup Dumpling", "$$", R.drawable.nxmtd, "4.1", "NanXiang"));
 
 
-        setAsiaRecycler(popularFoodList);
+        setPopularRecycler(popularFoodList);
 
     }
 
 
-    private void setPopularRecycler(List<TimeHorneredFood> timeHorneredFoodList) {
+    private void setTimeHorneredRecycler(List<TimeHorneredFood> timeHorneredFoodList) {
+
+        timeHorneredRecycler = findViewById(R.id.time_hornered_recycler);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        timeHorneredRecycler.setLayoutManager(layoutManager);
+        timeHorneredFoodAdapter = new TimeHorneredFoodAdapter(this, timeHorneredFoodList);
+        timeHorneredRecycler.setAdapter(timeHorneredFoodAdapter);
+
+    }
+
+    private void setPopularRecycler(List<PopularFood> popularFoodList) {
 
         popularRecycler = findViewById(R.id.popular_recycler);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
-        popularRecycler.setLayoutManager(layoutManager);
-        timeHorneredFoodAdapter = new TimeHorneredFoodAdapter(this, timeHorneredFoodList);
-        popularRecycler.setAdapter(timeHorneredFoodAdapter);
-
-    }
-
-    private void setAsiaRecycler(List<PopularFood> popularFoodList) {
-
-        asiaRecycler = findViewById(R.id.asia_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        asiaRecycler.setLayoutManager(layoutManager);
+        popularRecycler.setLayoutManager(layoutManager);
         popularFoodAdapter = new PopularFoodAdapter(this, popularFoodList);
-        asiaRecycler.setAdapter(popularFoodAdapter);
+        popularRecycler.setAdapter(popularFoodAdapter);
 
     }
 }

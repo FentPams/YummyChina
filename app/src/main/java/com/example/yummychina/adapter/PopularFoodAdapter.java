@@ -16,7 +16,7 @@ import com.example.yummychina.model.PopularFood;
 import java.util.List;
 
 
-public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.AsiaFoodViewHolder> {
+public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.PopularFoodViewHolder> {
 
     Context context;
     List<PopularFood> popularFoodList;
@@ -30,14 +30,14 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
 
     @NonNull
     @Override
-    public AsiaFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PopularFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.asia_food_row_item, parent, false);
-        return new AsiaFoodViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.popular_food_row_item, parent, false);
+        return new PopularFoodViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder( AsiaFoodViewHolder holder, int position) {
+    public void onBindViewHolder(PopularFoodViewHolder holder, int position) {
 
         holder.foodImage.setImageResource(popularFoodList.get(position).getImageUrl());
         holder.name.setText(popularFoodList.get(position).getName());
@@ -53,13 +53,13 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
     }
 
 
-    public static final class AsiaFoodViewHolder extends RecyclerView.ViewHolder{
+    public static final class PopularFoodViewHolder extends RecyclerView.ViewHolder{
 
 
         ImageView foodImage;
         TextView price, name, rating, restorantName;
 
-        public AsiaFoodViewHolder(@NonNull View itemView) {
+        public PopularFoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
             foodImage = itemView.findViewById(R.id.food_image);
@@ -67,8 +67,6 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
             name = itemView.findViewById(R.id.name);
             rating = itemView.findViewById(R.id.rating);
             restorantName = itemView.findViewById(R.id.restorant_name);
-
-
 
         }
     }

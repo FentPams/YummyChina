@@ -8,11 +8,13 @@
     android:padding="20dp">
 
     <ImageView
+        android:id="@+id/profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/girl"
         android:layout_marginTop="20dp"/>
     <TextView
+        android:id="@+id/full_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Xinyi Feng"
@@ -21,6 +23,7 @@
         android:layout_marginLeft="15dp"/>
 
     <TextView
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
         android:layout_marginLeft="15dp"

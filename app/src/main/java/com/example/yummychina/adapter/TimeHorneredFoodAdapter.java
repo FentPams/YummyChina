@@ -19,7 +19,7 @@ import com.example.yummychina.model.TimeHorneredFood;
 import java.util.List;
 
 
-public class TimeHorneredFoodAdapter extends RecyclerView.Adapter<TimeHorneredFoodAdapter.PopularFoodViewHolder> {
+public class TimeHorneredFoodAdapter extends RecyclerView.Adapter<TimeHorneredFoodAdapter.timeHorneredFoodViewHolder> {
 
     Context context;
     List<TimeHorneredFood> timeHorneredFoodList;
@@ -33,14 +33,14 @@ public class TimeHorneredFoodAdapter extends RecyclerView.Adapter<TimeHorneredFo
 
     @NonNull
     @Override
-    public PopularFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public timeHorneredFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.popular_food_row_item, parent, false);
-        return new PopularFoodViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.time_hornered_food_row_item, parent, false);
+        return new timeHorneredFoodViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PopularFoodViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull timeHorneredFoodViewHolder holder, int position) {
 
         holder.foodImage.setImageResource(timeHorneredFoodList.get(position).getImageUrl());
         holder.name.setText(timeHorneredFoodList.get(position).getName());
@@ -63,20 +63,18 @@ public class TimeHorneredFoodAdapter extends RecyclerView.Adapter<TimeHorneredFo
     }
 
 
-    public static final class PopularFoodViewHolder extends RecyclerView.ViewHolder{
+    public static final class timeHorneredFoodViewHolder extends RecyclerView.ViewHolder{
 
 
         ImageView foodImage;
         TextView price, name;
 
-        public PopularFoodViewHolder(@NonNull View itemView) {
+        public timeHorneredFoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
             foodImage = itemView.findViewById(R.id.food_image);
             price = itemView.findViewById(R.id.price);
             name = itemView.findViewById(R.id.name);
-
-
 
         }
     }
