@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.yummychina.model.Post;
 import com.example.yummychina.view.PostDetailActivity;
 import com.example.yummychina.adapter.holder.PostViewHolder;
 import com.example.yummychina.R;
@@ -21,29 +22,22 @@ import java.util.List;
  * This class bridge PostViewHolder and view: single-post layout
  * The data transitited by PostDetail Activity
  */
-public class PostAdapter extends ArrayAdapter<String> {
+public class PostAdapter extends ArrayAdapter<Post> {
 
     Context context;
     // transitited by PostDetail Activity
-    List<String> fromWhims;
-    List<String> imageLinks;
-    List<String> descriptions;
-    List<String> postIds;
-    List<String> stories;
+    List<Post> posts;
 
-    public PostAdapter(@NonNull Context context, List<String> fromWhims, List<String> imageLinks, List<String> descriptions, List<String> postIds, List<String> stroies) {
-        super(context, R.layout.single_post, R.id.fromWhom, fromWhims);
+    public PostAdapter(@NonNull Context context, List<Post> posts) {
+        super(context, R.layout.single_post, posts);
         this.context = context;
-        this.fromWhims = fromWhims;
-        this.imageLinks = imageLinks;
-        this.descriptions = descriptions;
-        this.postIds = postIds;
-        this.stories = stroies;
+        this.posts = posts;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        Post post = posts.get(position);
         View singleItem = convertView;
         PostViewHolder holder;
         if (singleItem == null) {
@@ -54,9 +48,9 @@ public class PostAdapter extends ArrayAdapter<String> {
         } else {
             holder = (PostViewHolder) singleItem.getTag();
         }
-        holder.getFromWhom().setText(fromWhims.get(position));
-        Picasso.get().load(imageLinks.get(position)).into(holder.getImage());
-        holder.getDescription().setText(descriptions.get(position));
+        holder.getFromWhom().setText(post.getFromWhom());
+        Picasso.get().load(post.getImageLink()).into(holder.getImage());
+        holder.getDescription().setText(post.getDescription());
 
         //load data from firebase and arrange into single-post
         singleItem.setOnClickListener(new View.OnClickListener() {
@@ -64,11 +58,11 @@ public class PostAdapter extends ArrayAdapter<String> {
             public void onClick(View view) {
                 Intent intent = new Intent(context, PostDetailActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("fromWhom", fromWhims.get(position));
-                intent.putExtra("imageLink", imageLinks.get(position));
-                intent.putExtra("description", descriptions.get(position));
-                intent.putExtra("postId", postIds.get(position));
-                intent.putExtra("story", stories.get(position));
+                intent.putExtra("fromWhom", post.getFromWhom());
+                intent.putExtra("imageLink", post.getImageLink());
+                intent.putExtra("description", post.getDescription());
+                intent.putExtra("postId", post.getPostId());
+                intent.putExtra("story", post.getStory());
                 context.startActivity(intent);
             }
         });

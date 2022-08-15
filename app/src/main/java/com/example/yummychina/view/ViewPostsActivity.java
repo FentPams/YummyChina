@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yummychina.R;
 import com.example.yummychina.adapter.PostAdapter;
+import com.example.yummychina.model.Post;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,11 +40,7 @@ public class ViewPostsActivity extends AppCompatActivity {
     ImageView back_btn, create_post_btn, recipe_btn, story_btn, restaurant_btn;
 
     private ListView postsLitView;
-    private List<String> fromWhims;
-    private List<String> imageLinks;
-    private List<String> descriptions;
-    private List<String> postIds;
-    private List<String> stories;
+    private List<Post> posts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +55,8 @@ public class ViewPostsActivity extends AppCompatActivity {
         story_btn = findViewById(R.id.xlb_icon);
         restaurant_btn = findViewById(R.id.restaurant_icon);
 
-        fromWhims = new ArrayList<>();
-        imageLinks = new ArrayList<>();
-        descriptions = new ArrayList<>();
-        postIds = new ArrayList<>();
-        stories = new ArrayList<>();
-        PostAdapter postAdapter =
-                new PostAdapter(this, fromWhims, imageLinks, descriptions, postIds, stories);
+        posts = new ArrayList<>();
+        PostAdapter postAdapter = new PostAdapter(this, posts);
         postsLitView.setAdapter(postAdapter);
 
         // read from firebase under the cuisines/benbang/xiaolongbao path
@@ -79,11 +71,13 @@ public class ViewPostsActivity extends AppCompatActivity {
         databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                postIds.add(0, dataSnapshot.getKey());
-                fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
-                imageLinks.add(0, dataSnapshot.child("imageLink").getValue(String.class));
-                stories.add(0, dataSnapshot.child("story").getValue(String.class));
-                descriptions.add(0, dataSnapshot.child("description").getValue(String.class));
+                Post post = new Post();
+                post.setPostId(dataSnapshot.getKey());
+                post.setFromWhom(dataSnapshot.child("from").getValue(String.class));
+                post.setDescription(dataSnapshot.child("description").getValue(String.class));
+                post.setImageLink(dataSnapshot.child("imageLink").getValue(String.class));
+                post.setStory(dataSnapshot.child("story").getValue(String.class));
+                posts.add(0, post);
                 postAdapter.notifyDataSetChanged();
             }
             // needs further implementation

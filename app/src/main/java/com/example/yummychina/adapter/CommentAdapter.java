@@ -11,30 +11,27 @@ import androidx.annotation.Nullable;
 
 import com.example.yummychina.R;
 import com.example.yummychina.adapter.holder.CommentHolder;
+import com.example.yummychina.model.Comment;
 
 import java.util.List;
 // This class bridge the model:CommentHolder and view: single-comment layout
-public class CommentAdapter extends ArrayAdapter<String> {
+public class CommentAdapter extends ArrayAdapter<Comment> {
 
     Context context;
-
     //Transited by PostDetailActivity
-    List<String> fromWhims;
-    List<String> comments;
-    List<String> dates;
+    List<Comment> comments;
 
-    public CommentAdapter(@NonNull Context context, List<String> fromWhims, List<String> comments, List<String> dates) {
-        super(context, R.layout.single_comment, R.id.fromWhom, fromWhims);
+    public CommentAdapter(@NonNull Context context, List<Comment> comments) {
+        super(context, R.layout.single_comment, comments);
         this.context = context;
-        this.fromWhims = fromWhims;
         this.comments = comments;
-        this.dates = dates;
     }
 
     // Sets data into the view:single item layout
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        Comment comment = comments.get(position);
         View singleItem = convertView;
         CommentHolder holder;
         if (singleItem == null) {
@@ -45,9 +42,9 @@ public class CommentAdapter extends ArrayAdapter<String> {
         } else {
             holder = (CommentHolder) singleItem.getTag();
         }
-        holder.getFromWhom().setText(fromWhims.get(position));
-        holder.getComment().setText(comments.get(position));
-        holder.getDate().setText(dates.get(position));
+        holder.getFromWhom().setText(comment.getFromWhom());
+        holder.getComment().setText(comment.getContent());
+        holder.getDate().setText(comment.getDateToString());
         return singleItem;
     }
 }

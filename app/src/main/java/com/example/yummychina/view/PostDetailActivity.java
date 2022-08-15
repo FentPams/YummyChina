@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.yummychina.R;
 import com.example.yummychina.adapter.CommentAdapter;
 import com.example.yummychina.adapter.PostAdapter;
+import com.example.yummychina.model.Comment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -54,9 +55,7 @@ public class PostDetailActivity extends AppCompatActivity {
     EditText editTextComment;
     Button post_btn;
     private ListView commentsListView;
-    private List<String> fromWhims;
-    private List<String> comments;
-    private List<String> dates;
+    private List<Comment> comments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +77,9 @@ public class PostDetailActivity extends AppCompatActivity {
 
         // init list view related fields
         commentsListView = findViewById(R.id.comments);
-        fromWhims = new ArrayList<>();
         comments = new ArrayList<>();
-        dates = new ArrayList<>();
         // hook for comment adapter
-        CommentAdapter commentAdapter = new CommentAdapter(this, fromWhims, comments, dates);
+        CommentAdapter commentAdapter = new CommentAdapter(this,comments);
         commentsListView.setAdapter(commentAdapter);
 
         // load data of post from firebase
@@ -124,9 +121,12 @@ public class PostDetailActivity extends AppCompatActivity {
             // read users' input comment into firebase
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
-                comments.add(0, dataSnapshot.child("comment").getValue(String.class));
-                dates.add(0, convertTimeMillsToDate(dataSnapshot.child("time").getValue(String.class)));
+                Comment comment = new Comment();
+                comment.setFromWhom(dataSnapshot.child("from").getValue(String.class));
+                comment.setContent(dataSnapshot.child("comment").getValue(String.class));
+                comment.setDate(new Date(
+                        Long.parseLong(dataSnapshot.child("time").getValue(String.class))));
+                comments.add(0, comment);
                 commentAdapter.notifyDataSetChanged();
             }
 
@@ -151,12 +151,5 @@ public class PostDetailActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    // format the time from firebase to interface
-    private String convertTimeMillsToDate(String timeMills) {
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-        Date date = new Date(Long.parseLong(timeMills));
-        return formatter.format(date);
     }
 }
