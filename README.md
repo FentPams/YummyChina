@@ -12,6 +12,11 @@
 ## Overview:
 
 ### A platform for sharing Chinese food, learning about authentic food culture
+<p>
+&nbsp&nbsp&nbsp&nbsp
+<img src="./readme_gifs/mainpage.gif" width="300" height="650"/>
+</p>
+
 - **Firebase** stores users' data(username, password, posts, comments...)
 - Support users to view **posts**, and create posts in real time
   - Allow creating **comments** and viewing others' comments
@@ -21,11 +26,6 @@
     - See **recipe**
     - See food story of **origin**
     - See representative **resturants** (time-horoned, popular)
-
-<p>
-&nbsp&nbsp&nbsp&nbsp
-<img src="./readme_gifs/mainpage.gif" width="300" height="650"/>
-</p>
 
 ## Features:
 ### Sign in/Sign up
