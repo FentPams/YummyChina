@@ -9,6 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yummychina.R;
 
+/**
+ * This class is the holder for single timehornered food
+ *
+ * The according layout:time_hornered_food_row_item.xml
+ */
 public class TimeHorneredFoodViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView foodImage;

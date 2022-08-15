@@ -9,6 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yummychina.R;
 
+/**
+ * This class is viewholder for single popular food
+ *
+ * The according layout:popular_food_row_item.xml
+ */
 public class PopularFoodViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView foodImage;

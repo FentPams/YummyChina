@@ -5,6 +5,11 @@ import android.widget.TextView;
 
 import com.example.yummychina.R;
 
+/**
+ * This class is holder for single comment
+ *
+ * The according layout:single_comment.xml
+ */
 public class CommentHolder {
     TextView fromWhom;
     TextView comment;

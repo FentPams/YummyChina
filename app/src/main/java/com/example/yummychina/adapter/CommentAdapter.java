@@ -17,6 +17,8 @@ import java.util.List;
 public class CommentAdapter extends ArrayAdapter<String> {
 
     Context context;
+
+    //Transited by PostDetailActivity
     List<String> fromWhims;
     List<String> comments;
     List<String> dates;

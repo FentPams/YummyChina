@@ -18,11 +18,13 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 /**
- * This class bridge PostViewHolder and view: single-post.xml
+ * This class bridge PostViewHolder and view: single-post layout
+ * The data transitited by PostDetail Activity
  */
 public class PostAdapter extends ArrayAdapter<String> {
 
     Context context;
+    // transitited by PostDetail Activity
     List<String> fromWhims;
     List<String> imageLinks;
     List<String> descriptions;
@@ -55,6 +57,8 @@ public class PostAdapter extends ArrayAdapter<String> {
         holder.getFromWhom().setText(fromWhims.get(position));
         Picasso.get().load(imageLinks.get(position)).into(holder.getImage());
         holder.getDescription().setText(descriptions.get(position));
+
+        //load data from firebase and arrange into single-post
         singleItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

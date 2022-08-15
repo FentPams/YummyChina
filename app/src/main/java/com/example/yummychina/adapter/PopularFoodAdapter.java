@@ -20,9 +20,9 @@ import java.util.List;
 public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodViewHolder> {
 
     Context context;
+    //Transited by ViewRestaurantActivity
     List<PopularFood> popularFoodList;
     PopularFoodViewHolder PopularFoodViewHolder;
-
 
 
     public PopularFoodAdapter(Context context, List<PopularFood> popularFoodList) {
@@ -37,6 +37,7 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodViewHold
         View view = LayoutInflater.from(context).inflate(R.layout.popular_food_row_item, parent, false);
         return new PopularFoodViewHolder(view);
     }
+
     // Sets data into the view:single item layout
     @Override
     public void onBindViewHolder(PopularFoodViewHolder holder, int position) {

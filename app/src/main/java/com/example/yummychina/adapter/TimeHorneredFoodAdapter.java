@@ -19,13 +19,14 @@ import com.example.yummychina.model.TimeHorneredFood;
 
 import java.util.List;
 
-
+/**
+ * This class bridge the TimeHorneredFoodViewHold and time_hornered_food_row_item layout
+ */
 public class TimeHorneredFoodAdapter extends RecyclerView.Adapter<TimeHorneredFoodViewHolder> {
 
     Context context;
+    //transitted by ViewRestaurantsActivity
     List<TimeHorneredFood> TimeHorneredFoodList;
-
-
 
     public TimeHorneredFoodAdapter(Context context, List<TimeHorneredFood> timeHorneredFoodList) {
         this.context = context;
@@ -54,7 +55,6 @@ public class TimeHorneredFoodAdapter extends RecyclerView.Adapter<TimeHorneredFo
                 context.startActivity(i);
             }
         });
-
 
     }
 
