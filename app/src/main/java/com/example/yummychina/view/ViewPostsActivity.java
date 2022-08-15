@@ -21,6 +21,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class displays the posts, enter from ShanghaiActivity by clicking "Benbang cuisine" button
+ *  with three sub-entries( links to RecipeActivity, to FoodStoryActivity, to ViewRestaurantActivity)
+ *  and links CreatePostActivity, PostDetailActivity
+ *
+ *  Features:
+ *  1) See real time posts read from firebase(loading is slow, needs improvement)
+ *  2) Click single post and enter in the PostDetail interface
+ *  3) Click the upper right "+" button and enter in CreatePost interface
+ *  4) Three buttons: enter in Recipe interface,FoodStory interface and View Restaurant interface
+ *
+ *  The according layout:activity_view_posts.xml
+ */
 public class ViewPostsActivity extends AppCompatActivity {
 
     ImageView back_btn, create_post_btn, recipe_btn, story_btn, restaurant_btn;
@@ -37,6 +50,7 @@ public class ViewPostsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_posts);
 
+        //hooks
         postsLitView = findViewById(R.id.postsLitView);
         back_btn = findViewById(R.id.back_pressed);
         create_post_btn = findViewById(R.id.create_post);
@@ -53,6 +67,7 @@ public class ViewPostsActivity extends AppCompatActivity {
                 new PostAdapter(this, fromWhims, imageLinks, descriptions, postIds, stories);
         postsLitView.setAdapter(postAdapter);
 
+        // read from firebase under the cuisines/benbang/xiaolongbao path
         Bundle extras = getIntent().getExtras();
         String cuisineName = extras.get("cuisine_name").toString();
         String dishName = extras.get("dish_name").toString();
@@ -60,6 +75,7 @@ public class ViewPostsActivity extends AppCompatActivity {
         DatabaseReference databaseReference =
                 FirebaseDatabase.getInstance().getReference().child("cuisines").child(cuisineName).child(dishName);
 
+        // load posts infor from firebase(including user, image, description and story)
         databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -70,7 +86,7 @@ public class ViewPostsActivity extends AppCompatActivity {
                 descriptions.add(0, dataSnapshot.child("description").getValue(String.class));
                 postAdapter.notifyDataSetChanged();
             }
-
+            // needs further implementation
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
             }
@@ -91,6 +107,7 @@ public class ViewPostsActivity extends AppCompatActivity {
             }
         });
 
+        // back button
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +115,7 @@ public class ViewPostsActivity extends AppCompatActivity {
             }
         });
 
+        //create post and save in right path(cuisines/benbang/xiaolongbao)
         create_post_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +127,7 @@ public class ViewPostsActivity extends AppCompatActivity {
         });
 
 
+        // recipe entry and is saved in right path(cuisines/benbang/xiaolongbao)
         recipe_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,6 +138,7 @@ public class ViewPostsActivity extends AppCompatActivity {
             }
         });
 
+        // story entry(further needs to be saved in firebase)
         story_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,6 +147,7 @@ public class ViewPostsActivity extends AppCompatActivity {
             }
         });
 
+        // restaurant entry(further needs to be saved in firebase)
         restaurant_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

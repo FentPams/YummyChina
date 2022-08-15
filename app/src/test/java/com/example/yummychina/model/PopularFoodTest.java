@@ -32,13 +32,13 @@ public class PopularFoodTest {
 
     @Test
     public void getRestorantname() {
-        assertEquals("test1",test.getRestorantname());
+        assertEquals("test1",test.getRestaurantname());
     }
 
     @Test
     public void testSetRestorantname() {
-        test.setRestorantname("test2");
-        assertEquals("test2",test.getRestorantname());
+        test.setRestaurantname("test2");
+        assertEquals("test2",test.getRestaurantname());
 
     }
 

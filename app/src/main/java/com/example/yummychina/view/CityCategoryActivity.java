@@ -16,8 +16,21 @@ import com.example.yummychina.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class CityCategoryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+/**
+ * This activity is the main interface of the app which displays the city background with cuisine button
+ *
+ * Features:
+ * 1)Displays lists of cities(backgrounds)
+ * 2)Button of cuisine to jump to the cuisine interface(in this case, only Benbang Cuisine is clickable)
+ * And it jumps to the ShanghaiActivity class.
+ * Other cuisine button needs further implementation.
+ * 3)Display profile navigation board. (logout button is the current workable button)
+ *
+ * The according layout file: activity_city_category.xml
+ */
 
+public class CityCategoryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    // Notice: BENBANG CUISINE now is the only workable button
     TextView shanghai_btn;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -29,14 +42,10 @@ public class CityCategoryActivity extends AppCompatActivity implements Navigatio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_category);
 
-        //Hooks
+        //hooks
         shanghai_btn = findViewById(R.id.benbang_cuisine);
-        //  portfolio_btn.setOnClickListener(view -> {
-        //     Intent intent = new Intent(CityCategoryActivity.this, UserProfileActivity.class);
-        //     startActivity(intent);
-        //     finish();
-        //  });
 
+        //Click BENBANG CUISINE button will leads to ShanghaiActivity class.
         shanghai_btn.setOnClickListener(view -> {
             Intent intent = new Intent(CityCategoryActivity.this, ShanghaiActivity.class);
             startActivity(intent);
@@ -49,13 +58,13 @@ public class CityCategoryActivity extends AppCompatActivity implements Navigatio
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
 
-        //---tool bar
+        //tool bar
         setSupportActionBar(toolbar);
 
-        // hide app name in bar
+        //hide app name in bar
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        //navgation bar
+        //navigation bar
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -76,6 +85,8 @@ public class CityCategoryActivity extends AppCompatActivity implements Navigatio
         }
     }
 
+    // logout button action in navigation bar
+    // Notice: logout button is the current only workable button
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {

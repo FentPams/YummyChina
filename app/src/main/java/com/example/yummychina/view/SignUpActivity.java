@@ -21,6 +21,16 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * This class supports users to sign up, entered from SingIn class,
+ * will transit to CityCategory class if sign up successfully
+ *
+ * Features:
+ * 1) Sign up with name, username, email, phone number, password
+ * 2) The data will be stored into firebase for authentication
+ *
+ * The according layout: activity_sign_up.xml
+ */
 public class SignUpActivity extends AppCompatActivity {
 
     private static final String TAG = "SignUpActivity";
@@ -34,6 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        //hooks
         mAuth = FirebaseAuth.getInstance();
         name = findViewById(R.id.name);
         username = findViewById(R.id.username);
@@ -43,6 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         signup_go = findViewById(R.id.signup_go);
         back_to_login = findViewById(R.id.back_to_login);
 
+        //signup button
         signup_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+        //back button
         back_to_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-
+    //read users'input and respond accordingly
     private void signUp() {
         String nameStr = name.getEditText().getText().toString();
         String usernameStr = username.getEditText().getText().toString();
@@ -104,6 +117,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+    //transit to city category activity if sign up successfully
     private void transitionToSocialMediaActivity() {
         Intent intent = new Intent(this, CityCategoryActivity.class);
         startActivity(intent);

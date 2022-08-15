@@ -11,12 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.yummychina.view.PostDetailActivity;
-import com.example.yummychina.model.PostViewHolder;
+import com.example.yummychina.adapter.holder.PostViewHolder;
 import com.example.yummychina.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+/**
+ * This class bridge PostViewHolder and view: single-post.xml
+ */
 public class PostAdapter extends ArrayAdapter<String> {
 
     Context context;

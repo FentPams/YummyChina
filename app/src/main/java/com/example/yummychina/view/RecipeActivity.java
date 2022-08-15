@@ -18,6 +18,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class displays recipe of food, enter from ViewPostsActivity by clicking recipe button
+ * <p>
+ * Features:
+ * Load recipe from firebase(but data is hardcoded into firebase, needs improvement)
+ * <p>
+ * Expected Features:
+ * 1) Links to youtube video and source of recipe
+ * 2) Supports bookmark feature
+ * <p>
+ * The according layout: activity_recipe.xml
+ */
 public class RecipeActivity extends AppCompatActivity {
 
     private ListView instructionListView;
@@ -32,6 +44,7 @@ public class RecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
 
+        //hooks
         instructionListView = findViewById(R.id.instruction);
         ingredientsListView = findViewById(R.id.ingredients);
 
@@ -45,6 +58,7 @@ public class RecipeActivity extends AppCompatActivity {
         instructionListView.setAdapter(instructionAdapter);
         ingredientsListView.setAdapter(ingredientsAdapter);
 
+        // read from firebase under the cuisines/benbang/xiaolongbao path
         Bundle extras = getIntent().getExtras();
         String cuisineName = extras.get("cuisine_name").toString();
         String dishName = extras.get("dish_name").toString();
@@ -52,13 +66,16 @@ public class RecipeActivity extends AppCompatActivity {
         DatabaseReference databaseReference =
                 FirebaseDatabase.getInstance().getReference().child("cuisines").child(cuisineName).child(dishName);
 
+        //load instructions from firebase
         databaseReference.child("instruction").addChildEventListener(new ChildEventListener() {
+            // load to interface
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 instruction.add(dataSnapshot.getValue().toString());
                 instructionAdapter.notifyDataSetChanged();
             }
 
+            // need future implementation
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
@@ -80,7 +97,7 @@ public class RecipeActivity extends AppCompatActivity {
             }
         });
 
-
+        //load  ingredients from firebase
         databaseReference.child("ingredients").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -88,6 +105,7 @@ public class RecipeActivity extends AppCompatActivity {
                 ingredientsAdapter.notifyDataSetChanged();
             }
 
+            // need future implementation
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 

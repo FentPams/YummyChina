@@ -31,6 +31,15 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.UUID;
 
+/**
+ * This class supports users to create posts in real time (by clicking the "+" button on the top right)
+ *
+ * Features:
+ * The created posts will be stored in firebase under the path "cuisine/benbang/posts"
+ * The image id, user name, image link, description, story will be stored.
+ *
+ * The according layout file: activity_create_post.xml
+ */
 public class CreatePostActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ImageView postImageView;
@@ -47,6 +56,7 @@ public class CreatePostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_post);
 
+        // hooks
         mAuth = FirebaseAuth.getInstance();
         extras = getIntent().getExtras();
 
@@ -56,6 +66,7 @@ public class CreatePostActivity extends AppCompatActivity {
         back_btn = findViewById(R.id.back_pressed);
         edtStory = findViewById(R.id.edtStory);
 
+        //listeners
         postImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +88,7 @@ public class CreatePostActivity extends AppCompatActivity {
             }
         });
     }
-
+    // select image to post
     private void selectImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, 1000);
@@ -110,6 +121,7 @@ public class CreatePostActivity extends AppCompatActivity {
         }
     }
 
+    //store pic into firebase storage
     private void uploadTheSelectedImageToFirebaseStorage() {
         if (bitmap != null) {
             //Get data from ImageView as bytes
@@ -128,6 +140,8 @@ public class CreatePostActivity extends AppCompatActivity {
                     Toast.makeText(CreatePostActivity.this, exception.toString(), Toast.LENGTH_LONG).show();
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+                // upload status message
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(CreatePostActivity.this, "Uploading Process Succeed.", Toast.LENGTH_LONG).show();
@@ -147,6 +161,7 @@ public class CreatePostActivity extends AppCompatActivity {
         }
     }
 
+    //store upload information into database
     private void uploadPostToFirebaseDataBase(String uploadedImageLink) {
         String cuisineName = extras.get("cuisine_name").toString();
         String dishName = extras.get("dish_name").toString();
@@ -160,7 +175,7 @@ public class CreatePostActivity extends AppCompatActivity {
         dataMap.put("imageId", imageIdentifier);
         dataMap.put("description", edtDescription.getText().toString());
         dataMap.put("story", edtStory.getText().toString());
-
+        //post status message
         databaseReference.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

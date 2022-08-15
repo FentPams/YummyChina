@@ -15,7 +15,21 @@ import com.example.yummychina.model.TimeHorneredFood;
 import java.util.ArrayList;
 import java.util.List;
 
-// This class is to set the recycler view with two adapters into acitivity_view_restaurants.xml
+/**
+ * This class displays the restaurants of the dish, enter from ViesPosts activity
+ * Links to the single DetailActivity
+ *
+ * Features:
+ * 1)Displays time-hornered restaurants and popular restaurants(hardcoded for now, needs improvement)
+ * 2)Each restaurant is an entry, link to the brand Details interface(only one sample entry displayed)
+ *
+ * Expected feature:
+ * 1)Bookmark and search functions
+ * 2)Complete the entry for each restaurant
+ * 3)Read and load infor from firebase
+ *
+ * The according layout:activity_view_restaurants.xml
+ */
 public class ViewRestaurantsActivity extends AppCompatActivity {
     // declare the view, adapters
     RecyclerView timeHorneredRecycler, popularRecycler;
@@ -55,7 +69,8 @@ public class ViewRestaurantsActivity extends AppCompatActivity {
 
     }
 
-
+    // Adds time-hornered restaurants lists into recycler view
+    // Apply TimeHorneredFoodAdapter
     private void setTimeHorneredRecycler(List<TimeHorneredFood> timeHorneredFoodList) {
 
         timeHorneredRecycler = findViewById(R.id.time_hornered_recycler);
@@ -65,7 +80,8 @@ public class ViewRestaurantsActivity extends AppCompatActivity {
         timeHorneredRecycler.setAdapter(timeHorneredFoodAdapter);
 
     }
-
+    // Adds popular restaurants lists into recycler view
+    // Apply PopularFoodAdapter
     private void setPopularRecycler(List<PopularFood> popularFoodList) {
 
         popularRecycler = findViewById(R.id.popular_recycler);

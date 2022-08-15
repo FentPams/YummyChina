@@ -9,6 +9,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yummychina.R;
 
+/**
+ * This class display the representative dishes, enter from CityCatergoryActivity
+ * Links to dish activity(current only xiaolongbao is workable)
+ *
+ * Features:
+ * 1)Displays the dishes(each dish is a button links to dish activity)
+ * 2)Links to each dish interface(current only xiaolongbao workable)
+ *
+ * Expected Features:
+ * 1)Complete the display of dishes
+ * 2)Adds activity for each dish, make each dish a button
+ * 3)Supports users to add dishes (after auditing by administrator, can be displayed and added new entry)
+ *
+ * The according layout:activity_shanghai.xml
+ */
 public class ShanghaiActivity extends AppCompatActivity {
 
     ImageView back_btn, xlb_bt;
@@ -18,7 +33,7 @@ public class ShanghaiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shanghai);
 
-        //Hooks
+        //hooks
         back_btn = findViewById(R.id.back_pressed);
         xlb_bt = findViewById(R.id.xlb_pic);
 
@@ -29,6 +44,8 @@ public class ShanghaiActivity extends AppCompatActivity {
             }
         });
 
+        // current only xiaolongbao pic is a workable button
+        // links to ViewPostsActivity interface
         xlb_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.yummychina.R;
-import com.example.yummychina.model.CommentHolder;
+import com.example.yummychina.adapter.holder.CommentHolder;
 
 import java.util.List;
-
+// This class bridge the model:CommentHolder and view: single-comment layout
 public class CommentAdapter extends ArrayAdapter<String> {
 
     Context context;
@@ -29,6 +29,7 @@ public class CommentAdapter extends ArrayAdapter<String> {
         this.dates = dates;
     }
 
+    // Sets data into the view:single item layout
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

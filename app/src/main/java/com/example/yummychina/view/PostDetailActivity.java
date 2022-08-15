@@ -29,7 +29,24 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * This class displays the single post, enter from ViewPostsActivity by clicking single post
+ * It reads from firebase and load the image, description, user, story in this interface.
+ * Supports add comments function
+ *
+ *  Features:
+ *  1) See real time posts(the image, description, user, story) read from firebase
+ *  2) Add comments from users and stores in firebase
+ *  3) Display the comments in real time(with time showed)
+ *
+ *  Expected Features(not completed):
+ *  1) Delete comment by users
+ *  2) "Like" feature
+ *  3) Bookmark feature
+ *  4) UI needs improvement
+ *
+ *  The according layout:activity_post_detail.xml
+ */
 public class PostDetailActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     ImageView imgPost,imgCurrentUser;
@@ -64,9 +81,11 @@ public class PostDetailActivity extends AppCompatActivity {
         fromWhims = new ArrayList<>();
         comments = new ArrayList<>();
         dates = new ArrayList<>();
+        // hook for comment adapter
         CommentAdapter commentAdapter = new CommentAdapter(this, fromWhims, comments, dates);
         commentsListView.setAdapter(commentAdapter);
 
+        // load data of post from firebase
         Bundle extras = getIntent().getExtras();
         String imageLink = extras.get("imageLink").toString();
         String fromWhom = extras.get("fromWhom").toString();
@@ -75,10 +94,12 @@ public class PostDetailActivity extends AppCompatActivity {
         String story = extras.get("story").toString();
 
         Picasso.get().load(imageLink).into(imgPost);
+
         txtPostTitle.setText(description);
         txtPostDateName.setText(fromWhom);
         txtPostDesc.setText(story);
 
+        // loads comments, user and time from firebase
         post_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +120,8 @@ public class PostDetailActivity extends AppCompatActivity {
                 FirebaseDatabase.getInstance().getReference().child("comments").child(postId);
 
         databaseReference.addChildEventListener(new ChildEventListener() {
+
+            // read users' input comment into firebase
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 fromWhims.add(0, dataSnapshot.child("from").getValue(String.class));
@@ -107,6 +130,7 @@ public class PostDetailActivity extends AppCompatActivity {
                 commentAdapter.notifyDataSetChanged();
             }
 
+            // needs further implementation
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
@@ -129,6 +153,7 @@ public class PostDetailActivity extends AppCompatActivity {
         });
     }
 
+    // format the time from firebase to interface
     private String convertTimeMillsToDate(String timeMills) {
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         Date date = new Date(Long.parseLong(timeMills));

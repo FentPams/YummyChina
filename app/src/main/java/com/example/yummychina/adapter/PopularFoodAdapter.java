@@ -11,15 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yummychina.R;
+import com.example.yummychina.adapter.holder.PopularFoodViewHolder;
 import com.example.yummychina.model.PopularFood;
 
 import java.util.List;
 
-
-public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.PopularFoodViewHolder> {
+// This class bridge the model:PopularFood and view: popular_food_row_item layout
+public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodViewHolder> {
 
     Context context;
     List<PopularFood> popularFoodList;
+    PopularFoodViewHolder PopularFoodViewHolder;
 
 
 
@@ -35,15 +37,15 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
         View view = LayoutInflater.from(context).inflate(R.layout.popular_food_row_item, parent, false);
         return new PopularFoodViewHolder(view);
     }
-
+    // Sets data into the view:single item layout
     @Override
     public void onBindViewHolder(PopularFoodViewHolder holder, int position) {
 
-        holder.foodImage.setImageResource(popularFoodList.get(position).getImageUrl());
-        holder.name.setText(popularFoodList.get(position).getName());
-        holder.price.setText(popularFoodList.get(position).getPrice());
-        holder.rating.setText(popularFoodList.get(position).getRating());
-        holder.restorantName.setText(popularFoodList.get(position).getRestorantname());
+        holder.getFoodImage().setImageResource(popularFoodList.get(position).getImageUrl());
+        holder.getName().setText(popularFoodList.get(position).getName());
+        holder.getPrice().setText(popularFoodList.get(position).getPrice());
+        holder.getRating().setText(popularFoodList.get(position).getRating());
+        holder.getRestaurantName().setText(popularFoodList.get(position).getRestaurantname());
 
     }
 
@@ -52,23 +54,5 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
         return popularFoodList.size();
     }
 
-
-    public static final class PopularFoodViewHolder extends RecyclerView.ViewHolder{
-
-
-        ImageView foodImage;
-        TextView price, name, rating, restorantName;
-
-        public PopularFoodViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            foodImage = itemView.findViewById(R.id.food_image);
-            price = itemView.findViewById(R.id.price);
-            name = itemView.findViewById(R.id.name);
-            rating = itemView.findViewById(R.id.rating);
-            restorantName = itemView.findViewById(R.id.restorant_name);
-
-        }
-    }
 
 }

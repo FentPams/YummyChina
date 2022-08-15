@@ -4,17 +4,16 @@ public class PopularFood {
     String name;
     String price;
     Integer imageUrl;
+    String rating;
+    String restaurantname;
 
-    public PopularFood(String name, String price, Integer imageUrl, String rating, String restorantname) {
+    public PopularFood(String name, String price, Integer imageUrl, String rating, String restaurantname) {
         this.name = name;
         this.price = price;
         this.imageUrl = imageUrl;
         this.rating = rating;
-        this.restorantname = restorantname;
+        this.restaurantname = restaurantname;
     }
-
-    String rating;
-    String restorantname;
 
     public String getRating() {
         return rating;
@@ -24,12 +23,12 @@ public class PopularFood {
         this.rating = rating;
     }
 
-    public String getRestorantname() {
-        return restorantname;
+    public String getRestaurantname() {
+        return restaurantname;
     }
 
-    public void setRestorantname(String restorantname) {
-        this.restorantname = restorantname;
+    public void setRestaurantname(String restaurantname) {
+        this.restaurantname = restaurantname;
     }
 
     public String getName() {

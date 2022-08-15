@@ -1,4 +1,4 @@
-package com.example.yummychina.model;
+package com.example.yummychina.adapter.holder;
 
 import android.view.View;
 import android.widget.ImageView;

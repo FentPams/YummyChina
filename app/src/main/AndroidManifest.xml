@@ -37,9 +37,6 @@
             android:name=".view.CityCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".view.UserProfileActivity"
-            android:exported="false" />
-        <activity
             android:name=".view.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -59,9 +56,6 @@
             android:exported="false" />
         <activity
             android:name=".view.CreatePostActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.MainActivity"
             android:exported="false" />
     </application>
 

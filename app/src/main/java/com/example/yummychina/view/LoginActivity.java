@@ -1,6 +1,5 @@
 package com.example.yummychina.view;
 
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +22,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * This class supports login feature, links the CityCategory Activity
+ *
+ * Features:
+ * 1)Sign in with email and password(authenticated by firebase)
+ * 2)Jump to sign up interface(SignUpActivity) by clicking signup button
+ * 3)Animation actions when transiting to sign up interface
+ *
+ * The according layout:activity_login.xml
+ */
 public class LoginActivity extends AppCompatActivity {
     private Button callSignUp, login_btn;
     private ImageView image;
@@ -35,9 +44,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // needs to figure out the updated method to display fullscreen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
+        // hooks
         callSignUp = findViewById(R.id.signup_screen);
         image = findViewById(R.id.logo_image);
         logoText =findViewById(R.id.logo_name);
@@ -45,8 +56,10 @@ public class LoginActivity extends AppCompatActivity {
         username =findViewById(R.id.username);
         password =findViewById(R.id.password);
         login_btn =findViewById(R.id.login_btn);
+
         mAuth = FirebaseAuth.getInstance();
 
+        // animation action
         callSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -70,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // login
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // read users' input and respond accordingly
     private void signIn() {
         mAuth.signInWithEmailAndPassword(username.getEditText().getText().toString(), password.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -102,6 +117,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //transit to city category activity if sign in successfully
     private void transitionToSocialMediaActivity() {
         Intent intent = new Intent(this, CityCategoryActivity.class);
         startActivity(intent);

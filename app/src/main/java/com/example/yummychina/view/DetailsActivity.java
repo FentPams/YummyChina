@@ -8,6 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yummychina.R;
 
+/**
+ * This class is to display details of restaurants(Not completed)
+ *
+ * Expected features(not completed):
+ * 1)Supports users to view the restaurants story/description(read data from database)
+ * 2)Supports users to locate the address of the restaurants
+ * 3)Supports the bookmark feature
+ *
+ * The according layout: activity_details.xml
+ */
 public class DetailsActivity extends AppCompatActivity {
 
     ImageView back_btn;
@@ -16,9 +26,10 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
+        // hook
         back_btn = findViewById(R.id.back_pressed);
 
+        // back to last interface
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

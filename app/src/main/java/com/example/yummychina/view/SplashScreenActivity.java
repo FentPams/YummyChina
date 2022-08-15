@@ -16,6 +16,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yummychina.R;
 
+/**
+ * This is the splash screen class that appear at first time when users open the app
+ * Links to the CityCategoryActivity
+ *
+ * Features:
+ * Cool animation
+ *
+ * The according layout:activity_splash_screen.xml
+ */
 public class SplashScreenActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN = 4000;
     // variables
