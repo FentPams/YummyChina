@@ -1,5 +1,8 @@
 package com.example.yummychina.model;
 
+/**
+ * This class is a model, encapsulating the user infor needed by app
+ */
 public class User {
     private String name;
     private String username;

@@ -1,5 +1,6 @@
 package com.example.yummychina.model;
 
+// This class is a model, encapsulating the popular food infor needed by app
 public class PopularFood {
     String name;
     String price;

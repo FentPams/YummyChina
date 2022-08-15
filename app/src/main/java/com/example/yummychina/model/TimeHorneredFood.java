@@ -1,5 +1,8 @@
 package com.example.yummychina.model;
 
+/**
+ * This class is a model , encapsulating the infor needed by app of timehornered food
+ */
 public class TimeHorneredFood {
 
     String name;

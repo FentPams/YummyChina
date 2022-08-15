@@ -3,6 +3,7 @@ package com.example.yummychina.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// This class is a model, encapsulating the comment infor needed by app
 public class Comment {
     private String fromWhom;
     private String content;

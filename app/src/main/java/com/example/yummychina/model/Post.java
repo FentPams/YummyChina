@@ -1,5 +1,8 @@
 package com.example.yummychina.model;
 
+/**
+ * This class is a model, encapsulating all the infor needed by app of posts.
+ */
 public class Post {
     private String postId;
     private String fromWhom;
