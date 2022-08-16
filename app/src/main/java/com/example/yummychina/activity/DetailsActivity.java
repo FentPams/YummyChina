@@ -10,11 +10,15 @@ import com.example.yummychina.R;
 
 /**
  * This class is to display details of restaurants(Not completed)
+ * Reason for design this interface:
+ * I hope the people who love the food can support the restaurant, because I believe when we support
+ * the restaurant, we are also protecting our food and food culture.
  *
  * Expected features(not completed):
  * 1)Supports users to view the restaurants story/description(read data from database)
  * 2)Supports users to locate the address of the restaurants
  * 3)Supports the bookmark feature
+ *
  *
  * The according layout: activity_details.xml
  */
@@ -38,3 +42,4 @@ public class DetailsActivity extends AppCompatActivity {
         });
     }
 }
+

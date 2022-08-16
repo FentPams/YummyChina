@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
  *
  * The according layout: activity_sign_up.xml
  */
+// All the users' input will be read and written into firebase
 public class SignUpActivity extends AppCompatActivity {
 
     private static final String TAG = "SignUpActivity";
@@ -71,13 +72,15 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    //read users'input and respond accordingly
+    // !! Demo in class: read users'input and respond accordingly
+    // Hit "go" button, the input will be read into some variables and then further written into firebase
     private void signUp() {
         String nameStr = name.getEditText().getText().toString();
         String usernameStr = username.getEditText().getText().toString();
         String emailStr = email.getEditText().getText().toString();
         String phoneNoStr = phoneNo.getEditText().getText().toString();
         String passwordStr = password.getEditText().getText().toString();
+
         mAuth.createUserWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -86,7 +89,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     FirebaseUser user = mAuth.getCurrentUser();
 
-                    // Firebase Database: insert user's name under uid
+                    // Firebase Database: insert user's inputs into different keys
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference ref =  database.getReference().child("users").child(user.getUid());
                     ref.child("name").setValue(nameStr);

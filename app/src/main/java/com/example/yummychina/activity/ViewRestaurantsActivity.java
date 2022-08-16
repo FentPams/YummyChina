@@ -16,12 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class displays the restaurants of the dish, enter from ViesPosts activity
+ * This class displays the restaurants of the making the dish very good, enter from ViesPosts activity
  * Links to the single DetailActivity
  *
  * Features:
  * 1)Displays time-hornered restaurants and popular restaurants(hardcoded for now, needs improvement)
- * 2)Each restaurant is an entry, link to the brand Details interface(only one sample entry displayed)
+ *  Time-hornerd restaurants are the business have been running for more than 20 or 30 years
+ *  Popular restaurants are maybe young but win good reputation.
+ * 2)Each restaurant is an entry button, link to the Details interface(only one sample entry displayed)
  *
  * Expected feature:
  * 1)Bookmark and search functions
@@ -42,7 +44,7 @@ public class ViewRestaurantsActivity extends AppCompatActivity {
         //connects with xml file
         setContentView(R.layout.activity_view_restaurants);
 
-        //some dummy data to model
+        //for now, I hardcode the lists of restaurants, but will make it dynamically loaded in the future
         List<TimeHorneredFood> timeHorneredFoodList = new ArrayList<>();
 
         timeHorneredFoodList.add(new TimeHorneredFood("Jiajia Tangbao", "$3", R.drawable.jjtb));

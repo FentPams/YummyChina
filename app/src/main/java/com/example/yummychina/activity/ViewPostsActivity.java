@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class displays the posts, enter from ShanghaiActivity by clicking "Benbang cuisine" button
+ * This class displays the posts loaded from firebase in real time, enter from ShanghaiActivity by clicking "Benbang cuisine" button
  *  with three sub-entries( links to RecipeActivity, to FoodStoryActivity, to ViewRestaurantActivity)
  *  and links CreatePostActivity, PostDetailActivity
  *

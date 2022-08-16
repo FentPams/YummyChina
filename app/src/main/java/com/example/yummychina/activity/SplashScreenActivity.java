@@ -21,10 +21,11 @@ import com.example.yummychina.R;
  * Links to the CityCategoryActivity
  *
  * Features:
- * Cool animation
+ * Cool animation when open App
  *
  * The according layout:activity_splash_screen.xml
  */
+
 public class SplashScreenActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN = 4000;
     // variables
@@ -36,16 +37,22 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        // Hide top bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // The activity is connected to the layout file named activity_splash_screen.xml
         setContentView(R.layout.activity_splash_screen);
 
-        // Animations
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
-
+        //It is easily to find the logo and slogan through their id
+        // You can send actions to it.
         //hooks
         logo = findViewById(R.id.logo);
         slogan = findViewById(R.id.slogan);
+
+        // In this case, we set animation into it
+        // Animations
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         //set animations
         logo.setAnimation(topAnim);
@@ -56,19 +63,19 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //Call next screen
+                //After you end the splashscreen activity, you will be directed to login activity.
                 Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
 
-                //Attach all the elements those you want to animate in design
-                Pair[]  pairs = new Pair[2];
-                pairs[0] = new Pair<View,String>(logo, "logo_image");
-                pairs[1] = new Pair<View,String>(slogan, "logo_text");
+                //Attach all the elements to animate in design
+                Pair[] pairs = new Pair[2];
+                pairs[0] = new Pair<View, String>(logo, "logo_image");
+                pairs[1] = new Pair<View, String>(slogan, "logo_text");
 
                 //wrap the call in API level 21 or higher
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreenActivity.this,pairs);
-                    startActivity(intent,options.toBundle());
-                }
-                else{
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreenActivity.this, pairs);
+                    startActivity(intent, options.toBundle());
+                } else {
                     startActivity(intent);
                 }
 

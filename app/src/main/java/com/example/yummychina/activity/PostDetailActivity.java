@@ -94,7 +94,7 @@ public class PostDetailActivity extends AppCompatActivity {
         txtPostDateName.setText(fromWhom);
         txtPostDesc.setText(story);
 
-        // loads comments, user and time from firebase
+        // !!! Demo in class. Write comments, user and time into firebase
         post_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,7 +116,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
         databaseReference.addChildEventListener(new ChildEventListener() {
 
-            // read users' input comment into firebase
+            // load users' input of comment from firebase in real-time and display it on screen
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Comment comment = new Comment();

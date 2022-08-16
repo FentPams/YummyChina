@@ -20,15 +20,20 @@ import com.google.firebase.auth.FirebaseAuth;
  * This activity is the main interface of the app which displays the city background with cuisine button
  *
  * Features:
- * 1)Displays lists of cities(backgrounds)
+ * 1)Displays list of cuisine, with portrait of city and its representative cuisine(cuisine is button clickable)
  * 2)Button of cuisine to jump to the cuisine interface(in this case, only Benbang Cuisine is clickable)
- * And it jumps to the ShanghaiActivity class.
- * Other cuisine button needs further implementation.
- * 3)Display profile navigation board. (logout button is the current workable button)
+ *   And it jumps to the ShanghaiActivity class.
+ *   Other cuisine button needs further implementation.
+ * 3)Display profile navigation board by clicking upper-left corner button. (logout button is the current workable button)
+ * 4)Chinese calligraphy on upper-right corner: Taste of China
+ *
+ * Expected features:
+ * There are more cuisines not listed, need further completion.
  *
  * The according layout file: activity_city_category.xml
  */
 
+//After you sign in or sign up successfully, you'll be led to this interface
 public class CityCategoryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     // Notice: BENBANG CUISINE now is the only workable button
     TextView shanghai_btn;
