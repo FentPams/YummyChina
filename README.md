@@ -11,7 +11,8 @@
 
 ## Overview:
 
-### A platform for sharing Chinese food, learning about authentic food culture
+### A platform for sharing Chinese food, learning about authentic food culture  
+:point_right:[Link for Introduction Slides](https://github.com/FentPams/YummyChina/blob/main/Slides_YummyChina.pdf)
 <p>
 &nbsp&nbsp&nbsp&nbsp
 <img src="./readme_gifs/mainpage.gif" width="300" height="650"/>
